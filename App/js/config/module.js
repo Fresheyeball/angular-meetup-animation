@@ -1,3 +1,3 @@
 (function(){
-  angular.module('meetup', ['ngRoute']);  
+  angular.module('meetup', ['ngRoute','ngAnimate']);  
 }).call(this);

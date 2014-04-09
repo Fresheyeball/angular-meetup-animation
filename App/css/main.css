@@ -23,7 +23,7 @@ h1, h2{
   font-weight: 300;
 }
 
-h1{
+h1:first-child{
   margin-top : 0;
 }
 
@@ -55,26 +55,32 @@ section{
   box-shadow: 0 5px 5px rgba(0,0,0,0.2);
 }
 
-ul{
+ul.candy{
   margin: 10px 0;
   padding: 0;
   position: relative;
 }
 
-li{
-  padding : 5px;
-  border-radius: 3px;
-  list-style: none;
-  background: linear-gradient(GhostWhite, lightGray);
-  margin: 3px;
-  width: 100%;
-  box-sizing:border-box;
+li.candy{
+  padding       : 5px;
+  border-radius : 3px;
+  list-style    : none;
+  background    : linear-gradient(GhostWhite, lightGray);
+  margin        : 3px;
+  width         : 100%;
+  box-sizing    : border-box;
 }
 
-li i{
+li.candy i{
   margin-top: 3px;
   float : right;
   cursor: pointer;
+}
+
+.example{
+  padding: 10px;
+  border-radius: 3px;
+  border: 2px dashed blue;
 }
 
 /* SLIDE */
@@ -106,4 +112,28 @@ li i{
   opacity: 1;
   -webkit-transform : translatex(0);
   transform : translateX(0);
+}
+
+/* VERTICAL */
+
+.vertical.ng-enter,
+.vertical.ng-leave{
+  -webkit-transition : 0.3s all;
+  transition : 0.3s all;
+}
+
+.vertical.ng-enter, 
+.vertical.ng-leave.ng-leave-active{
+  opacity : 0;
+  height  : 0;
+  margin  : 0;
+  padding : 0;
+}
+
+.vertical.ng-enter-active,
+.vertical.ng-leave{
+  opacity : 1;
+  height  : 32px;
+  margin  : 3px;
+  padding : 5px;
 }

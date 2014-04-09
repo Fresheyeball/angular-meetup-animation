@@ -1,16 +1,76 @@
 <h1>CSS3 Animations</h1>
-<ul>
-  <li 
-    ng-repeat="student in students"
-    ng-class="animClass">
-    {{student}}
-    <i ng-click="remove(student);" class="fa fa-times-circle"></i>
-  </li>
-</ul>
-<input ng-model="new"/>
-<button ng-click="addNew()">Add New</button>
+<p>
+  Easy to define, easy to use!</br>
+  CSS3 Animations work out of the box with: 
+    <ul>
+      <li>ng-repeat</li>
+      <li>ng-view</li>
+      <li>ng-include</li>
+      <li>ng-switch</li>
+      <li>ng-if</li>
+      <li>ng-class</li>
+      <li>ng-show, ng-hide</li>
+    </ul>
+  Anything where angular gives you classes!
+</p>
+<h1>Example</h1>
+<div class="example">
+  <ul class="candy">
+    <li 
+      ng-repeat="student in students"
+      class="candy vertical">
+      {{student.name}}
+      <i ng-click="remove(student);" class="fa fa-times-circle"></i>
+    </li>
+  </ul>
+  <form ng-submit="addNew()">
+    <input ng-model="new"/>
+    <button >Add New</button>
+  </form>
+</div>
+<h1>Code</h1>
 <div hljs>
-  function(){
-    alert('wow');
+  <ul class="candy">
+    <li 
+      ng-repeat="student in students"
+      class="candy vertical">
+      {{student.name}}
+      <i ng-click="remove(student);" class="fa fa-times-circle"></i>
+    </li>
+  </ul>
+</div>
+<div hljs>
+  /* LIST ITEM STYLE */
+  li.candy{
+    padding       : 5px;
+    border-radius : 3px;
+    list-style    : none;
+    background    : linear-gradient(GhostWhite, lightGray);
+    margin        : 3px;
+    width         : 100%;
+    box-sizing    : border-box;
+  }
+
+  /* ANIMATION */
+  .vertical.ng-enter,
+  .vertical.ng-leave{
+    -webkit-transition : 0.3s all;
+    transition : 0.3s all;
+  }
+
+  .vertical.ng-enter, 
+  .vertical.ng-leave.ng-leave-active{
+    opacity : 0;
+    height  : 0;
+    margin  : 0;
+    padding : 0;
+  }
+
+  .vertical.ng-enter-active,
+  .vertical.ng-leave{
+    opacity : 1;
+    height  : 32px;
+    margin  : 3px;
+    padding : 5px;
   }
 </div>

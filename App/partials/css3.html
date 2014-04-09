@@ -1,6 +1,11 @@
 <h1>CSS3 Animations</h1>
 <ul>
-  <li ng-repeat="student in students">{{student.name}}</li>
+  <li 
+    ng-repeat="student in students"
+    ng-class="animClass">
+    {{student}}
+    <i ng-click="remove(student);" class="fa fa-times-circle"></i>
+  </li>
 </ul>
 <input ng-model="new"/>
 <button ng-click="addNew()">Add New</button>

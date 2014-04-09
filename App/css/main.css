@@ -55,7 +55,29 @@ section{
   box-shadow: 0 5px 5px rgba(0,0,0,0.2);
 }
 
-/* ANIMATIONS */
+ul{
+  margin: 10px 0;
+  padding: 0;
+  position: relative;
+}
+
+li{
+  padding : 5px;
+  border-radius: 3px;
+  list-style: none;
+  background: linear-gradient(GhostWhite, lightGray);
+  margin: 3px;
+  width: 100%;
+  box-sizing:border-box;
+}
+
+li i{
+  margin-top: 3px;
+  float : right;
+  cursor: pointer;
+}
+
+/* SLIDE */
 
 .slide.ng-enter,
 .slide.ng-leave{

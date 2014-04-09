@@ -8,6 +8,7 @@
     "normalize-css": "~3.0.1",
     "angular-animate": "~1.2.16",
     "angular-highlightjs": "~0.2.7",
-    "highlight": "~7.0.1"
+    "highlight": "~7.0.1",
+    "Font-Awesome": "~4.0.3"
   }
 }

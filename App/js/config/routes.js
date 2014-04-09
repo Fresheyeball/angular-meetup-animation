@@ -9,6 +9,10 @@
         templateUrl : 'partials/css3.html',
         controller  : 'collectionCtrl'
       })
+      .when('/greensock', {
+        templateUrl : 'partials/greensock.html',
+        controller  : 'collectionCtrl'
+      })
       .otherwise({
         redirectTo : '/index'
       });

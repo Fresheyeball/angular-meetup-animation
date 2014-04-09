@@ -78,9 +78,9 @@ li.candy i{
 }
 
 .example{
-  padding: 10px;
-  border-radius: 3px;
-  border: 2px dashed blue;
+  padding: 20px;
+  border-radius: 5px;
+  border: 2px dashed rgba(255,215,40,0.85);
 }
 
 /* SLIDE */

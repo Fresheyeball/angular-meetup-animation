@@ -50,7 +50,7 @@ section{
   margin-left : 150px;
   padding: 20px;
   background: white;
-  width : 400px;
+  width : calc(100% - 300px);
   -webkit-box-shadow: 0 5px 5px rgba(0,0,0,0.2);
   box-shadow: 0 5px 5px rgba(0,0,0,0.2);
 }

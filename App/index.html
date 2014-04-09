@@ -1,0 +1,32 @@
+<doctype html>
+<html>
+  <head>
+    <title>Angular Meetup, Animation</title>
+    
+    <!-- deps -->
+    <script src="/js/vendor/angular/angular.js"              ></script>
+    <script src="/js/vendor/angular-route/angular-route.js"  ></script>
+    <script src="/js/vendor/lodash/dist/lodash.js"           ></script>
+
+    <!-- app -->
+    <script src="/js/config/module.js"                        ></script>
+    <script src="/js/config/routes.js"                        ></script>
+    <script src="/js/controllers/index.ctrl.js"               ></script>
+    <script src="/js/controllers/collection.ctrl.js"          ></script>
+    <script src="/js/controllers/counter.ctrl.js"             ></script>
+
+    <!-- styles -->
+    <link rel="stylesheet" href="/vendor/normalize-css/normalize.css"  >
+    <link rel="stylesheet" href="/css/main.css"                        >
+
+  </head>
+  <body ng-app="meetup">
+    <header>
+      <img src="/images/angular-logo.jpeg" id="logo">
+    </header>
+    <nav>
+      <a href="#foo"></a>
+    </nav>
+    <section ng-view></section>
+  </body>
+</html>

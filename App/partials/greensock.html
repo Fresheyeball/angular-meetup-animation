@@ -1,4 +1,4 @@
-<h1>CSS3 Animations</h1>
+<h1>GreenSock</h1>
 <p>
   Higher learning curve... blah blah for now.
 </p>
@@ -18,3 +18,44 @@
   </form>
 </div>
 <h1>Code</h1>
+<div hljs>
+  angular.module('meetup').animation('.explosivo', function(){
+    return {
+      enter : function(element, done){
+        new TweenLite.fromTo(element[0], 0.3, {
+          opacity    : 0,
+          rotationY  : 45
+        },{
+          opacity    : 1,
+          rotationY  : 0,
+          onComplete : done
+        });
+      },
+      leave : function(element, done){
+        new TweenLite.fromTo(element[0], 0.3, {
+          opacity    : 1,
+          scale      : 1
+        },{
+          opacity    : 0,
+          scale      : 3,
+          onComplete : done
+        });
+      }
+    };
+  });
+</div>
+<h1>Example 2: the incredible sequel</h1>
+<div class="example">
+  <ul class="candy">
+    <li 
+      ng-repeat="student in students"
+      class="candy insano">
+      {{student.name}}
+      <i ng-click="remove(student);" class="fa fa-times-circle"></i>
+    </li>
+  </ul>
+  <form ng-submit="addNew()">
+    <input ng-model="new"/>
+    <button >Add New</button>
+  </form>
+</div>

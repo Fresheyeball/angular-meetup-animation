@@ -7,16 +7,23 @@ html{
 
 header{
   background: white;
-  margin-bottom: 20px
+  margin-bottom: 20px;
+  position: fixed;
+  width : 100%;
+  z-index: 50;
+  top : 0;
+  -webkit-box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 5px rgba(0,0,0,0.2);
 }
 
 #logo, h2{
-  height: 45px;
+  height: 25px;
   margin: 10px;
   margin-right:0;
   display: inline-block;
   vertical-align: top;
-  line-height: 1.8em;
+  line-height: 1.2em;
+  font-size: 20px;
 }
 
 h1, h2{
@@ -28,8 +35,9 @@ h1:first-child{
 }
 
 nav{
-  float : left;
-  padding : 10px;  
+  top : 75px;
+  position: fixed;
+  padding : 10px;
 }
 
 nav a{
@@ -47,10 +55,10 @@ nav a:last-child{
 }
 
 section{
-  margin-left : 150px;
+  margin: 75px 0 75px 150px;
   padding: 20px;
   background: white;
-  width : calc(100% - 300px);
+  width : calc(100% - 216px);
   -webkit-box-shadow: 0 5px 5px rgba(0,0,0,0.2);
   box-shadow: 0 5px 5px rgba(0,0,0,0.2);
 }
@@ -69,6 +77,35 @@ li.candy{
   margin        : 3px;
   width         : 100%;
   box-sizing    : border-box;
+  text-shadow   : 0 1px 1px white, 0 1px 1px white, 0 -1px 1px white, -1px 0 1px white, 1px 1px 1px white, -1px 1px 1px white, 1px -1px 1px white, -1px -1px 1px white;
+}
+
+li.candy:nth-child(1){
+  background: red;
+}
+
+li.candy:nth-child(2){
+  background: orange;
+}
+
+li.candy:nth-child(3){
+  background: yellow;
+}
+
+li.candy:nth-child(4){
+  background: green;
+}
+
+li.candy:nth-child(5){
+  background: blue;
+}
+
+li.candy:nth-child(6){
+  background: #4B0082;
+}
+
+li.candy:nth-child(7){
+  background: #8F00FF;
 }
 
 li.candy i{

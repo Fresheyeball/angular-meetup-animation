@@ -1,7 +1,7 @@
 <h1>CSS3 Animations</h1>
 <p>
   Easy to define, easy to use!</br>
-  CSS3 Animations work out of the box with: 
+  CSS3 Animations work out of the box with:
     <ul>
       <li>ng-repeat</li>
       <li>ng-view</li>
@@ -16,7 +16,7 @@
 <h1>Example</h1>
 <div class="example">
   <ul class="candy">
-    <li 
+    <li
       ng-repeat="student in students"
       class="candy vertical">
       {{student.name}}
@@ -31,7 +31,7 @@
 <h1>Code</h1>
 <div hljs>
   <ul class="candy">
-    <li 
+    <li
       ng-repeat="student in students"
       class="candy vertical">
       {{student.name}}
@@ -42,13 +42,14 @@
 <div hljs>
   /* LIST ITEM STYLE */
   li.candy{
-    padding       : 5px;
-    border-radius : 3px;
-    list-style    : none;
-    background    : linear-gradient(GhostWhite, lightGray);
-    margin        : 3px;
-    width         : 100%;
-    box-sizing    : border-box;
+    padding            : 5px;
+    border-radius      : 3px;
+    list-style         : none;
+    background         : linear-gradient(GhostWhite, lightGray);
+    margin             : 3px;
+    width              : 100%;
+    box-sizing         : border-box;
+    -webkit-transition : 0.3s background;
   }
 
   /* ANIMATION */
@@ -58,7 +59,7 @@
     transition : 0.3s all;
   }
 
-  .vertical.ng-enter, 
+  .vertical.ng-enter,
   .vertical.ng-leave.ng-leave-active{
     opacity : 0;
     height  : 0;

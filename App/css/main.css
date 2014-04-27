@@ -78,6 +78,7 @@ li.candy{
   width         : 100%;
   box-sizing    : border-box;
   text-shadow   : 0 1px 1px white, 0 1px 1px white, 0 -1px 1px white, -1px 0 1px white, 1px 1px 1px white, -1px 1px 1px white, 1px -1px 1px white, -1px -1px 1px white;
+  -webkit-transition : 0.3s background;
 }
 
 li.candy:nth-child(1){
@@ -128,7 +129,7 @@ li.candy i{
   transition : 0.3s all;
 }
 
-.slide.ng-enter, 
+.slide.ng-enter,
 .slide.ng-leave.ng-leave-active{
   opacity : 0;
   position: absolute;
@@ -139,7 +140,7 @@ li.candy i{
   transform : translateX(-10px);
 }
 
-.slide.ng-leave-active{  
+.slide.ng-leave-active{
   -webkit-transform : translateX(50px);
   transform : translateX(50px);
 }
@@ -159,7 +160,7 @@ li.candy i{
   transition : 0.3s all;
 }
 
-.vertical.ng-enter, 
+.vertical.ng-enter,
 .vertical.ng-leave.ng-leave-active{
   opacity : 0;
   height  : 0;

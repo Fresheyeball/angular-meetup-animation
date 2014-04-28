@@ -4,12 +4,12 @@
     <title>Angular Meetup, Animation</title>
 
     <!-- deps -->
-    <script src="/vendor/angular/angular.js"                              ></script>
-    <script src="/vendor/angular-route/angular-route.js"                  ></script>
-    <script src="/vendor/angular-animate/angular-animate.js"              ></script>
-    <script src="/vendor/highlightjs/highlight.pack.js"                   ></script>
-    <script src="/vendor/angular-highlightjs/angular-highlightjs.js"      ></script>
-    <script src="/vendor/lodash/dist/lodash.js"                           ></script>
+    <script src="/vendor/angular/angular.js"                                     ></script>
+    <script src="/vendor/angular-route/angular-route.js"                         ></script>
+    <script src="/vendor/angular-animate/angular-animate.js"                     ></script>
+    <script src="/vendor/highlightjs/highlight.pack.js"                          ></script>
+    <script src="/vendor/angular-highlightjs/angular-highlightjs.js"             ></script>
+    <script src="/vendor/lodash/dist/lodash.js"                                  ></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.6/TweenLite.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.6/TimelineLite.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.6/easing/EasePack.min.js"></script>
@@ -17,15 +17,15 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.6/plugins/TextPlugin.min.js"></script>
 
     <!-- app -->
-    <script src="/js/config/module.js"                                    ></script>
-    <script src="/js/config/routes.js"                                    ></script>
-    <script src="/js/animations/explosivo.js"                             ></script>
-    <script src="/js/animations/insano.js"                                ></script>
-    <script src="/js/controllers/index.ctrl.js"                           ></script>
-    <script src="/js/controllers/collection.ctrl.js"                      ></script>
-    <script src="/js/controllers/counter.ctrl.js"                         ></script>
-    <script src="/js/controllers/transport.ctrl.js"                       ></script>
-    <script src="/js/controllers/swap.ctrl.js"                            ></script>
+    <script src="/js/config/module.js"                                           ></script>
+    <script src="/js/config/routes.js"                                           ></script>
+    <script src="/js/animations/explosivo.js"                                    ></script>
+    <script src="/js/animations/vertical.js"                                     ></script>
+    <script src="/js/controllers/index.ctrl.js"                                  ></script>
+    <script src="/js/controllers/collection.ctrl.js"                             ></script>
+    <script src="/js/controllers/counter.ctrl.js"                                ></script>
+    <script src="/js/controllers/transport.ctrl.js"                              ></script>
+    <script src="/js/controllers/swap.ctrl.js"                                   ></script>
 
     <!-- styles -->
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400,300'>
@@ -33,6 +33,8 @@
     <link rel="stylesheet" href="/vendor/highlightjs/styles/default.css"                  >
     <link rel="stylesheet" href="/vendor/normalize-css/normalize.css"                     >
     <link rel="stylesheet" href="/css/main.css"                                           >
+    <link rel="stylesheet" href="/css/slide.css"                                          >
+    <link rel="stylesheet" href="/css/vertical.css"                                       >
 
   </head>
   <body ng-app="meetup">
@@ -42,7 +44,8 @@
     </header>
     <nav>
       <a href="#/index">home</a>
-      <a href="#/css3">CSS3</a>
+      <a href="#/css3">CSS3 Transitions</a>
+      <a href="#/css3key">CSS3 Keyframes</a>
       <a href="#/greensock">GreenSock</a>
       <a href="#/directives">Directives</a>
       <a href="#/transportObjects">Transports</a>

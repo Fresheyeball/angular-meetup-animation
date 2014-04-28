@@ -1,5 +1,6 @@
 html{
-  background: url('/images/brushed.png');
+/*  background: url('/images/brushed.png');*/
+  background:#F2F2F2;
   color: DarkSlateGray;
   font-family: 'Open Sans';
   font-weight: 400;
@@ -16,13 +17,16 @@ header{
   box-shadow: 0 5px 5px rgba(0,0,0,0.2);
 }
 
-#logo, h2{
+#logo, header h2{
   height: 25px;
   margin: 10px;
   margin-right:0;
   display: inline-block;
   vertical-align: top;
   line-height: 1.2em;
+}
+
+h2{
   font-size: 20px;
 }
 
@@ -45,9 +49,11 @@ nav a{
   text-decoration: none;
   display: block;
   padding: 5px;
-  width  : 100px;
+  padding-right 0;
+  width  : 120px;
   border-bottom: 1px dotted DarkSlateGray;
   text-transform: uppercase;
+  font-size : 12px;
 }
 
 nav a:last-child{
@@ -119,59 +125,4 @@ li.candy i{
   padding: 20px;
   border-radius: 5px;
   border: 2px dashed rgba(255,215,40,0.85);
-}
-
-/* SLIDE */
-
-.slide.ng-enter,
-.slide.ng-leave{
-  -webkit-transition : 0.3s all;
-  transition : 0.3s all;
-}
-
-.slide.ng-enter,
-.slide.ng-leave.ng-leave-active{
-  opacity : 0;
-  position: absolute;
-}
-
-.slide.ng-enter{
-  -webkit-transform : translateX(-10px);
-  transform : translateX(-10px);
-}
-
-.slide.ng-leave-active{
-  -webkit-transform : translateX(50px);
-  transform : translateX(50px);
-}
-
-.slide.ng-enter-active,
-.slide.ng-leave{
-  opacity: 1;
-  -webkit-transform : translatex(0);
-  transform : translateX(0);
-}
-
-/* VERTICAL */
-
-.vertical.ng-enter,
-.vertical.ng-leave{
-  -webkit-transition : 0.3s all;
-  transition : 0.3s all;
-}
-
-.vertical.ng-enter,
-.vertical.ng-leave.ng-leave-active{
-  opacity : 0;
-  height  : 0;
-  margin  : 0;
-  padding : 0;
-}
-
-.vertical.ng-enter-active,
-.vertical.ng-leave{
-  opacity : 1;
-  height  : 32px;
-  margin  : 3px;
-  padding : 5px;
 }

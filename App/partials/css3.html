@@ -1,25 +1,10 @@
 <h1>CSS3 Animations</h1>
-<p>
-  Easy to define, easy to use!</br>
-  CSS3 Animations work out of the box with:
-    <ul>
-      <li>ng-repeat</li>
-      <li>ng-view</li>
-      <li>ng-include</li>
-      <li>ng-switch</li>
-      <li>ng-if</li>
-      <li>ng-class</li>
-      <li>ng-show, ng-hide</li>
-      <li>forms</li>
-    </ul>
-  Anything where angular gives you classes!
-</p>
-<h1>Example</h1>
+<h2>Example</h2>
 <div class="example">
   <ul class="candy">
     <li
       ng-repeat="student in students"
-      class="candy vertical">
+      class="candy cssvertical">
       {{student.name}}
       <i ng-click="remove(student);" class="fa fa-times-circle"></i>
     </li>
@@ -29,7 +14,7 @@
     <button >Add New</button>
   </form>
 </div>
-<h1>Code</h1>
+<h2>Code</h2>
 <div hljs>
   <ul class="candy">
     <li

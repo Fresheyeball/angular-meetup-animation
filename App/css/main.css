@@ -41,7 +41,7 @@ h1:first-child{
 .c50{
   display: inline-block;
   width :50%;
-  vertical-align: top;
+  vertical-align: top;  
 }
 
 nav{
@@ -135,4 +135,17 @@ li.candy i{
   padding: 20px;
   border-radius: 5px;
   border: 2px dashed rgba(255,215,40,0.85);
+}
+
+[fountain]{
+  width:200px;
+  height:200px;
+}
+
+.orb{
+  width: 20px;
+  height: 20px;
+  background: blue;
+  border-radius: 40px;
+  position: absolute;
 }

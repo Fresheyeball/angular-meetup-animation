@@ -137,9 +137,10 @@ li.candy i{
   border: 2px dashed rgba(255,215,40,0.85);
 }
 
-[fountain]{
-  width:200px;
-  height:200px;
+[counter]{
+  height:100px;
+  font-family: 'Open Sans Light';
+  font-size: 74px;
 }
 
 .orb{

@@ -38,6 +38,12 @@ h1:first-child{
   margin-top : 0;
 }
 
+.c50{
+  display: inline-block;
+  width :50%;
+  vertical-align: top;
+}
+
 nav{
   top : 75px;
   position: fixed;
@@ -83,6 +89,7 @@ li.candy{
   margin        : 3px;
   width         : 100%;
   box-sizing    : border-box;
+  position      : relative;
   text-shadow   : 0 1px 1px white, 0 1px 1px white, 0 -1px 1px white, -1px 0 1px white, 1px 1px 1px white, -1px 1px 1px white, 1px -1px 1px white, -1px -1px 1px white;
   -webkit-transition : 0.3s background;
 }
@@ -119,6 +126,9 @@ li.candy i{
   margin-top: 3px;
   float : right;
   cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
 
 .example{

@@ -1,13 +1,19 @@
 (function(){
   angular.module('meetup').controller('collectionCtrl', function($scope){
-  
-    $scope.students = [{
-      name : "Tom"
-    },{
-      name : "Dick"
-    },{
-      name : "Sally"
-    }];
+
+    $scope.reset = function(){
+      $scope.students = [{
+        name : "Tom"
+      },{
+        name : "Dick"
+      },{
+        name : "Sally"
+      },{
+        name : "The quick brown fox jumped over the lazy dog."
+      }];
+    };
+
+    $scope.reset();
 
     $scope.addNew = function(){
       $scope.students.push({name : $scope.new});

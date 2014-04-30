@@ -15,7 +15,7 @@
 .cssvertical.ng-enter-active,
 .cssvertical.ng-leave{
   opacity : 1;
-  height  : 32px;
+  height  : auto;
   margin  : 3px;
   padding : 5px;
 }

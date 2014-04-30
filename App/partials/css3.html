@@ -1,6 +1,45 @@
 <h1>CSS3 Animations</h1>
 <h2>Example</h2>
 <div class="example">
+  <form ng-submit="addNew()">
+    <input ng-model="new"/>
+    <button >Add New</button>
+    <a ng-click="reset()">Reset</a>
+  </form>
+  <div class="c50">
+    <strong>Using track by</strong>
+    <ul class="candy">
+      <li
+        ng-repeat="student in students track by student.name"
+        class="candy cssvertical">
+        {{student.name}}
+        <i ng-click="remove(student);" class="fa fa-times-circle"></i>
+      </li>
+    </ul>
+  </div><div class="c50">
+    <strong>Not using track by</strong>
+    <ul class="candy">
+      <li
+        ng-repeat="student in students"
+        class="candy cssvertical">
+        {{student.name}}
+        <i ng-click="remove(student);" class="fa fa-times-circle"></i>
+      </li>
+    </ul> 
+  </div>
+</div>
+<h2>Code</h2>
+<div hljs>
+  <strong>Using track by</strong>
+  <ul class="candy">
+    <li
+      ng-repeat="student in students track by student.name"
+      class="candy cssvertical">
+      {{student.name}}
+      <i ng-click="remove(student);" class="fa fa-times-circle"></i>
+    </li>
+  </ul>
+  <strong>Not using track by</strong>
   <ul class="candy">
     <li
       ng-repeat="student in students"
@@ -8,22 +47,7 @@
       {{student.name}}
       <i ng-click="remove(student);" class="fa fa-times-circle"></i>
     </li>
-  </ul>
-  <form ng-submit="addNew()">
-    <input ng-model="new"/>
-    <button >Add New</button>
-  </form>
-</div>
-<h2>Code</h2>
-<div hljs>
-  <ul class="candy">
-    <li
-      ng-repeat="student in students"
-      class="candy vertical">
-      {{student.name}}
-      <i ng-click="remove(student);" class="fa fa-times-circle"></i>
-    </li>
-  </ul>
+  </ul>  
 </div>
 <div hljs>
   /* LIST ITEM STYLE */
@@ -56,7 +80,7 @@
   .vertical.ng-enter-active,
   .vertical.ng-leave{
     opacity : 1;
-    height  : 32px;
+    height  : auto;
     margin  : 3px;
     padding : 5px;
   }

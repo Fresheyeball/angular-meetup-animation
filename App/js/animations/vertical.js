@@ -9,7 +9,7 @@
           padding    : 0
         },{
           opacity    : 1,
-          height     : 32,
+          height     : element[0].clientHeight,
           margin     : 3,
           padding    : 5,
           onComplete : done

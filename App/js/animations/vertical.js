@@ -2,7 +2,7 @@
   angular.module('meetup').animation('.jsvertical', function(){
     return {
       enter : function(element, done){
-        new TweenLite.fromTo(element[0], 0.3, {
+        var tl = new TweenLite.fromTo(element[0], 0.3, {
           opacity    : 0,
           height     : 0,
           margin     : 0,
@@ -14,15 +14,17 @@
           padding    : 5,
           onComplete : done
         });
+        return (function(){ tl.kill(); });
       },
       leave : function(element, done){
-        new TweenLite.to(element[0], 0.3, {
+        var tl = new TweenLite.to(element[0], 0.3, {
           opacity    : 0,
           height     : 0,
-          margin     : 0,
           padding    : 0,
+          margin     : '0 0 -3px 0',
           onComplete : done
         });
+        return (function(){ tl.kill(); });
       }
     };
   });

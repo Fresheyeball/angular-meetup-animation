@@ -8,7 +8,7 @@
           if(val)
             { scope.chars = val.split(''); }
 
-          // $animate.addClass(scope.$eval(attrs.countAnimation));
+          $animate.addClass(scope.$eval(attrs.countAnimation));
         });
         scope.$watch(attrs.countAnimation, function(){
 

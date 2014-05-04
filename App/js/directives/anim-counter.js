@@ -1,11 +1,11 @@
 (function(){
-  angular.module('meetup').directive('counter', function($animate, $timeout, $parse){
+  angular.module('meetup').directive('animCounter', function($animate, $timeout, $parse){
     return {
       scope    : true,
       template : "<div class='count' ng-repeat='char in chars'>{{char.val}}</div>",
       controller : function($scope, $attrs){ 
 
-        var digits = $parse($attrs.counterDigits)($scope);
+        var digits = $parse($attrs.animCounterDigits)($scope);
 
         $scope.chars = [];
         for(var i = 0; i < digits; i++){
@@ -14,7 +14,7 @@
           });
         }
 
-        $scope.$watch($attrs.counter, function(val){
+        $scope.$watch($attrs.animCounter, function(val){
           if(val || val === 0){ 
             var chars = (val + '').split('').map(function(x){ return parseInt(x); });
 
@@ -36,7 +36,7 @@
       link     : function (scope, element, attrs){
 
         scope.$watch('chars', function(val){
-          $animate.addClass(element, scope[attrs.counterAnimation], function(){
+          $animate.addClass(element, scope[attrs.animCounterAnimation], function(){
             element.removeAttr('class');
           });
         }, true);

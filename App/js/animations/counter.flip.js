@@ -14,7 +14,7 @@
           tl = new TimelineMax({ onComplete : done })
           .set(chars, {
             opacity   : 0,
-            rotationX : 180
+            rotationX : 90
           })
           .staggerTo(chars, 1, {
             opacity    : 1,

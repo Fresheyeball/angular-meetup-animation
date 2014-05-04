@@ -6,14 +6,14 @@
     $scope.animOptions = ['none','pop','spin'];
     $scope.anim        = $scope.animOptions[0];
 
-    $scope.random      = function(){ Math.floor(Math.random() * 1000); };
+    $scope.random      = function(){ $scope.count = Math.floor(Math.random() * 1000); };
     $scope.incrementBy = function(amount){ $scope.count += amount; };
     $scope.increment   = function(){ $scope.incrementBy(1); };
 
     $scope.stop  = function(){ $interval.cancel(interval); };
     $scope.start = function(){ 
       $scope.stop();
-      var interval = $interval($scope.increment, SECOND); 
+      interval = $interval($scope.increment, SECOND); 
     };    
     $scope.start();
 

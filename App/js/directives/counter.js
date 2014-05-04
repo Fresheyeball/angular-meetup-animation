@@ -12,27 +12,33 @@
             val : 0 
           });
         }
-        console.log($scope.chars);
 
         $scope.$watch($attrs.counter, function(val){
           if(val || val === 0){ 
-            var chars = (val + '').split('');
-            for(var j = 0; j < digits - chars.length + 2; j++ ){
-              chars.unshift(0);
+            var chars = (val + '').split('').map(function(x){ return parseInt(x); });
+
+            if(chars.length < digits){
+              var delta = digits - chars.length;
+              for(var j = 0; j < delta; j++ ){
+                chars.unshift(0);
+              }              
             }
-            for(var k = 0; k < $scope.chars.length; k++){
+            
+            for(var k = 0; k < digits; k++ ){
               $scope.chars[k].val = parseInt(chars[k]);
             }
           }
         });
+
       },
       link     : function (scope, element, attrs){
+
         scope.$watch('chars', function(val){
-          console.log(scope[attrs.counterAnimation]);
           $animate.addClass(element, scope[attrs.counterAnimation], function(){
             element.removeAttr('class');
           });
         }, true);
+
       }
     }
   });

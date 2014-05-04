@@ -203,3 +203,7 @@ li.candy i{
   bottom:0;
   z-index: -1;
 }
+
+li.candy.swap{
+  position: absolute;
+}

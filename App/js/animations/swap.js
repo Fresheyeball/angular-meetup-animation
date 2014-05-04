@@ -1,5 +1,23 @@
 (function(){
-  angular.module('meetup').animation('.swap', function(){
+  var amm = angular.module('meetup');
+
+  amm.directive('swappable', function($timeout){
+    return {
+      link : function(scope, element, attrs){
+        $timeout(function(){
+          var candy = element[0].querySelectorAll('.candy');
+          for(var i = 0; i < candy.length; i++){
+            TweenLite.set(candy[i],{
+              y : i * 35
+            });
+          }       
+          TweenLite.set(element[0], { height : candy.length * 35 });
+        }, 0, false); 
+      }
+    };
+  });
+
+  amm.animation('.swap', function(){
     return {
       enter : function(element, done){
 

@@ -1,15 +1,15 @@
-<h2>Breaking the universe</h2>
+<h1>Breaking the universe</h1>
 <div class="example">
   <div class="c50">
     <strong>Standing</strong>
-    <ul class="candy">
+    <ul class="candy" swappable>
       <li class="candy swap" ng-repeat="state in standingStates track by state.name">
         {{state.name}}<a ng-click="moveToDestroyed($index)"><i class="fa fa-arrow-right"></i></a>
       </li>
     </ul>
   </div><div class="c50">
     <strong>Destroyed</strong>
-    <ul class="candy">
+    <ul class="candy" swappable>
       <li class="candy swap" ng-repeat="state in destroyedStates track by state.name">
         <a ng-click="moveToStanding($index)"><i class="fa fa-arrow-left"></i></a>{{state.name}}
       </li>

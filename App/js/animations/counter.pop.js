@@ -1,12 +1,21 @@
 (function(){
   angular.module('meetup').animation('.pop', function(){
+    console.log('bowser');
     return {
-      show : function(element, done){
-        console.log('wowzers');
-        new TweenLite.to(element[0], 2, {
-          scale      : 5,
-          onComplete : done
-        });
+      addClass : function(element, done){
+        console.log('wowzer');
+        var chars = element[0].querySelectorAll('.count'),
+            tl    = null;
+        console.log(chars);
+        if(chars.length){
+          tl = new TweenMax.staggerTo(chars, 2, {
+            scale      : 5
+          }, 0.2, done);
+        }
+        return function(){
+          if(tl)
+            { tl.kill(); }
+        };
       }
     };
   });

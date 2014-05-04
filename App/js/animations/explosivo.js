@@ -1,5 +1,6 @@
 (function(){
   angular.module('meetup').animation('.explosivo', function(){
+    console.log('moot');
     return {
       enter : function(element, done){
         var tl = new TweenLite.fromTo(element[0], 0.3, {
@@ -58,5 +59,4 @@
     };
   });
 
-  // angular.module('meetup').classNameFilter
 }).call(this);

@@ -3,20 +3,14 @@
     return {
       addClass : function(element, className, done){
 
-        var chars = element[0].querySelectorAll('.count'),
-            tl    = null;
+        var chars = element[0].querySelectorAll('.count');
         
         if(chars.length){
-          tl = new TweenMax.staggerTo(chars, 2, {
-            scale      : 5
+          console.log('add');
+          TweenMax.staggerTo(chars, 0.3, {
+            scale      : 1.5
           }, 0.2, done);          
         }else{ done(); }
-        
-        return function(){
-          console.log(tl);
-          if(tl)
-            { tl.kill(); }
-        };
 
       }
     };

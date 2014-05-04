@@ -20,6 +20,7 @@
       link     : function (scope, element, attrs){
         scope.$watch('chars', function(val){
           $animate.addClass(element, scope[attrs.counterAnimation], function(){
+            console.log('remove');
             element.removeClass(scope[attrs.counterAnimation]);              
           });
         }, true);

@@ -9,6 +9,7 @@
         },{
           opacity      : 1,
           rotationY    : 0,
+          ease         : Quad.easeInOut,
           onComplete   : done
         });
         return (function(){ tl.kill(); });

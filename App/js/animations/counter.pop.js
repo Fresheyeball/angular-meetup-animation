@@ -13,10 +13,12 @@
 
           tl = new TimelineMax({ onComplete : done })
           .staggerTo(chars, 1, {
-            scale      : 1.5
+            scale      : 1.5,
+            ease       : Cubic.easeInOut
           }, 0.6)
           .staggerTo(chars, 1, {
-            scale      : 1
+            scale      : 1,
+            ease       : Back.easeOut
           }, 0.6).totalDuration(0.5);
 
         }else{ done(); }

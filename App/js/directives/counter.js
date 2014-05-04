@@ -1,10 +1,10 @@
 (function(){
-  angular.module('meetup').directive('counter', function($animate, $timeout){
+  angular.module('meetup').directive('counter', function($animate, $timeout, $parse){
     return {
       scope    : true,
       template : "<div class='count' ng-repeat='char in chars'>{{char.val}}</div>",
-      controller : function($scope, $attrs){
-        digits = parseInt($attrs.counterDigits);
+      controller : function($scope, $attrs){        
+        var digits = $parse($attrs.counterDigits)($scope);
 
         $scope.chars = [];
         for(var i = 0; i < digits; i++){
@@ -23,7 +23,7 @@
                 chars.unshift(0);
               }              
             }
-            
+
             for(var k = 0; k < digits; k++ ){
               $scope.chars[k].val = parseInt(chars[k]);
             }

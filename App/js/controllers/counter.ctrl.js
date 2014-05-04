@@ -5,8 +5,9 @@
     $scope.count       = 0;
     $scope.animOptions = ['none','pop','spin'];
     $scope.anim        = $scope.animOptions[0];
+    $scope.digits      = 3;
 
-    $scope.random      = function(){ $scope.count = Math.floor(Math.random() * 1000); };
+    $scope.random      = function(){ $scope.count = Math.floor(Math.random() * 999); };
     $scope.incrementBy = function(amount){ $scope.count += amount; };
     $scope.increment   = function(){ $scope.incrementBy(1); };
 
@@ -18,7 +19,7 @@
     $scope.start();
 
     $scope.$watch('count', function(val){
-      if(val > 9999){ val = 0; }
+      if(val > 999){ val = 0; }
     });
 
   });

@@ -69,10 +69,10 @@ nav a:last-child{
 section{
   margin: 75px 0 75px 150px;
   padding: 20px;
-  background: white;
   width : calc(100% - 216px);
   -webkit-box-shadow: 0 5px 5px rgba(0,0,0,0.2);
   box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+  background: url('../images/rainbow.jpg') bottom right no-repeat white;
 }
 
 ul.candy{
@@ -146,10 +146,12 @@ li.candy i{
 .count:nth-child(4){ color:green;   }
 .count:nth-child(5){ color:blue;    }
 
-.orb{
-  width: 20px;
-  height: 20px;
-  background: blue;
-  border-radius: 40px;
+.smallInt{
+  width : 45px;
+}
+
+#rainbow{
   position: absolute;
+  bottom:0;
+  z-index: -1;
 }

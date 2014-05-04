@@ -6,16 +6,21 @@
     anim-counter-digits="digits"
     anim-counter-animation="anim"
     ></div>
-  <select 
-    ng-model="anim"
-    >
-    <option
-      ng-repeat="opt in animOptions"
-      >{{opt}}</option>
-  </select>
-  <button ng-click="stop()">Stop</button>
-  <button ng-click="start()">Start</button>
-  <button ng-click="random()">Random</button>
+  <form>
+    <label>Animate with:</label>
+    <select 
+      ng-model="anim">
+      <option
+        ng-repeat="opt in animOptions"
+        >{{opt}}</option>
+    </select>
+    <br/>
+    <label>Increment By:</label>
+    <input ng-model="by" type="number" class="smallInt"/>
+    <button ng-click="stop()">Stop</button>
+    <button ng-click="start()">Start</button>
+    <button ng-click="random()">Random</button>
+  </form>
 </div>
 <h2>Code</h2>
 <div hljs>
@@ -141,10 +146,56 @@
     };
   });
 </div>
-<h2>Example</h2>
+<h2>Example 2 : The Re-Exampling</h2>
 <div class="example">
   <div 
     tween-counter="count"
     tween-counter-digits="digits"
     ></div>
+  <form>
+    <label>Increment By:</label>
+    <input ng-model="by" type="number" class="smallInt"/>
+    <button ng-click="stop()">Stop</button>
+    <button ng-click="start()">Start</button>
+    <button ng-click="random()">Random</button>
+  </form>
+</div>
+<h2>Code</h2>
+<div hljs>
+...
+controller : function($scope, $attrs){ 
+
+  ...
+
+  $scope.$watch($attrs.tweenCounter, function(newVal, oldVal){
+    var tprop = { val : oldVal };
+    if(tl)
+      { tl.kill(); }
+    new TweenLite.to(tprop, 1, {
+      val : newVal,
+      onUpdate : function(){
+        $scope._count = Math.floor(tprop.val);
+        $scope.$digest();
+      }
+    });
+  });
+
+  $scope.$watch('_count', function(val){
+    if(val || val === 0){ 
+      var chars = (val + '').split('').map(function(x){ return parseInt(x); });
+
+      if(chars.length < digits){
+        var delta = digits - chars.length;
+        for(var j = 0; j < delta; j++ ){
+          chars.unshift(0);
+        }              
+      }
+
+      for(var k = 0; k < digits; k++ ){
+        $scope.chars[k].val = parseInt(chars[k]);
+      }
+
+    }
+  });
+}
 </div>

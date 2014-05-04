@@ -1,5 +1,7 @@
 (function(){
-  angular.module('meetup').config(function($routeProvider){
+  angular.module('meetup').config(function($routeProvider, $locationProvider){
+    // $locationProvider.html5Mode(true);
+
     $routeProvider
       .when('/index', {
         templateUrl : 'partials/index.html',
@@ -12,6 +14,9 @@
       .when('/greensock', {
         templateUrl : 'partials/greensock.html',
         controller  : 'collectionCtrl'
+      })
+      .when('/css-vs-js', {
+        templateUrl : 'partials/css-vs-js.html'        
       })
       .when('/directives', {
         templateUrl : 'partials/directives.html',

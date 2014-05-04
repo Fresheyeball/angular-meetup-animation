@@ -6,6 +6,7 @@
       controller : function($scope, $attrs){ 
 
         var digits = $parse($attrs.tweenCounterDigits)($scope);
+            tl     = null;
         $scope._count = 0;
 
         $scope.chars = [];
@@ -17,10 +18,12 @@
 
         $scope.$watch($attrs.tweenCounter, function(newVal, oldVal){
           var tprop = { val : oldVal };
-          new TweenLite.to(tprop, 0.5, {
+          if(tl)
+            { tl.kill(); }
+          new TweenLite.to(tprop, 1, {
             val : newVal,
             onUpdate : function(){
-              $scope._count = tprop.val;
+              $scope._count = Math.floor(tprop.val);
               $scope.$digest();
             }
           });

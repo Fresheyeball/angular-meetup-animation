@@ -204,6 +204,6 @@ li.candy i{
   z-index: -1;
 }
 
-li.candy.swap{
+li.candy[swap]{
   position: absolute;
 }

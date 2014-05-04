@@ -8,7 +8,7 @@
       controller : function($scope, $attrs){
         this.elems = [];
 
-        $scope.$watch($attrs.swappable, function(val){ $scope.states = _.sortBy(val, 'name'); });
+        $scope.$watchCollection($attrs.swappable, function(val){ $scope.states = val; });
         
         this.addElement = function(element){
           this.elems.push(element);
@@ -27,15 +27,17 @@
           });
         }, 0, false);
 
+        var firster = true;
         scope.$watchCollection('states', function(){
           var tweens = [];
           $timeout(function(){
-            console.log('watcher', attrs.swappable);
             for(var i = 0; i < ctrl.elems.length; i++){
-              tweens.push(new TweenLite.to(ctrl.elems[i], 0.5, {
-                y : i * CANDY_HEIGHT
+              tweens.push(new TweenLite.to(ctrl.elems[i], 2, {
+                y     : i * CANDY_HEIGHT,
+                delay : i
               }));
-              new TimelineLite({tweens:tweens});
+              var durration = firster ? 0 : 2; firster = false;
+              new TimelineLite({tweens:tweens}).totalDuration(durration);
             }
           }, 0, false);
         });

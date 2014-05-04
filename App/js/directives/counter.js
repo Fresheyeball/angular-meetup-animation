@@ -14,16 +14,15 @@
                   value : ch
                 });
               });
-
             }
         });
       },
       link     : function (scope, element, attrs){
         scope.$watch('chars', function(val){
-          $timeout(function(){
-            $animate.addClass(element, scope[attrs.counterAnimation]);
-          }, 0, false);
-        });
+          $animate.addClass(element, scope[attrs.counterAnimation], function(){
+            element.removeClass(scope[attrs.counterAnimation]);              
+          });
+        }, true);
       }
     }
   });

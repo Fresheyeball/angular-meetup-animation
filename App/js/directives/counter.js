@@ -17,12 +17,11 @@
         $scope.$watch($attrs.counter, function(val){
           if(val || val === 0){ 
             var chars = (val + '').split('');
-            for(var i = $scope.chars.length - 1; i >= 0; i--){
-              console.log(i, chars[i], $scope.chars[i]);
-              if(chars[i])
-                { $scope.chars[i].val = parseInt(chars[i]); }
-              else
-                { $scope.chars[i].val = 0; }
+            for(var j = 0; j < digits - chars.length + 2; j++ ){
+              chars.unshift(0);
+            }
+            for(var k = 0; k < $scope.chars.length; k++){
+              $scope.chars[k].val = parseInt(chars[k]);
             }
           }
         });
@@ -31,7 +30,7 @@
         scope.$watch('chars', function(val){
           console.log(scope[attrs.counterAnimation]);
           $animate.addClass(element, scope[attrs.counterAnimation], function(){
-            element.removeAttr('class');              
+            element.removeAttr('class');
           });
         }, true);
       }

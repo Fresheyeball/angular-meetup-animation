@@ -15,7 +15,10 @@
           .staggerTo(chars, 1, {
             rotation   : 360,
             ease       : Back.easeOut
-          }, 0.6).totalDuration(1);
+          }, 0.6)
+          .to(chars, 0, {
+            rotation   : 0
+          }).totalDuration(0.5);
 
         }else{ done(); }
 

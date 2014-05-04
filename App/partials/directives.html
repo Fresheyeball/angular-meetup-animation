@@ -17,3 +17,129 @@
   <button ng-click="start()">Start</button>
   <button ng-click="random()">Random</button>
 </div>
+<h2>Code</h2>
+<div hljs>
+  <div 
+    anim-counter="count"
+    anim-counter-digits="digits"
+    anim-counter-animation="anim"
+    ></div>  
+</div>
+<div hljs>
+  ...
+  link     : function (scope, element, attrs){
+
+    scope.$watch('chars', function(val){
+      $animate.addClass(element, scope[attrs.animCounterAnimation], function(){
+        element.removeAttr('class');
+      });
+    }, true);
+
+  }
+  ...
+</div>
+<div hljs>
+ angular.module('meetup').animation('.pop', function(){
+    return {
+      addClass : function(element, className, done){
+
+        var chars = element[0].querySelectorAll('.count'),
+            tl    = null;
+        
+        if(chars.length){
+          TweenLite.set(chars,{
+            perspective : 500
+          });
+
+          tl = new TimelineMax({ onComplete : done })
+          .staggerTo(chars, 1, {
+            scale      : 1.5,
+            ease       : Cubic.easeOut
+          }, 0.6)
+          .staggerTo(chars, 1, {
+            scale      : 1,
+            ease       : Back.easeOut
+          }, 0.6).totalDuration(0.5);
+
+        }else{ done(); }
+
+        return function(){
+          if(tl)
+            { tl.pause().kill(); }
+        };
+
+      }
+    };
+  });
+</div>
+<div hljs>
+  angular.module('meetup').animation('.spin', function(){
+    return {
+      addClass : function(element, className, done){
+
+        var chars = element[0].querySelectorAll('.count'),
+            tl    = null;
+        
+        if(chars.length){
+          TweenLite.set(chars,{
+            perspective : 500
+          });
+
+          tl = new TimelineMax({ onComplete : done })
+          .staggerTo(chars, 1, {
+            rotation   : 360,
+            ease       : Cubic.easeOut
+          }, 0.6)
+          .set(chars, {
+            rotation   : 0
+          }).totalDuration(0.5);
+
+        }else{ done(); }
+
+        return function(){
+          if(tl)
+            { tl.pause().kill(); }
+        };
+
+      }
+    };
+  });
+</div>
+<div hljs>
+  angular.module('meetup').animation('.flip', function(){
+    return {
+      addClass : function(element, className, done){
+
+        var chars = element[0].querySelectorAll('.count'),
+            tl    = null;
+        
+        if(chars.length){
+          TweenLite.set(element[0],{
+            perspective : 500
+          });
+
+          tl = new TimelineMax({ onComplete : done })
+          .set(chars, {
+            opacity   : 0,
+            rotationX : 90
+          })
+          .staggerTo(chars, 1, {
+            opacity    : 1,
+            rotationX  : 0,
+            ease       : Back.easeOut
+          }, 0.6)
+          .totalDuration(0.5);
+
+        }else{ done(); }
+
+        return function(){
+          if(tl)
+            { tl.pause().kill(); }
+        };
+
+      }
+    };
+  });
+</div>
+<div>
+</div>

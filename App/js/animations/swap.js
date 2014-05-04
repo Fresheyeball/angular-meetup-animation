@@ -1,6 +1,7 @@
 (function(){
-  var amm = angular.module('meetup'),
-      tl  = null;
+  var amm   = angular.module('meetup'),
+      tl    = null;
+      moves = [];
 
   amm.directive('swappable', function($timeout){
     var setPositionsInRepeat = function(element){
@@ -17,7 +18,17 @@
       link : function(scope, element, attrs){
         setPositionsInRepeat(element); 
         scope.$watch(function(){
-          setPositionsInRepeat(element); 
+          var tweens = [];
+          $timeout(function(){
+            _.each(moves, function(move, i){
+              console.log(i);
+              tweens.push(new TweenLite.to(move, {
+                y : i * 35
+              }));              
+            });
+            tl = new TimelineLite({tweens : tweens});
+
+          }, 0, false);
         });
       }
     };
@@ -30,8 +41,9 @@
 
     return {
       move  : function(element, done){
-
-        // tl = new TimelineLite({tweens : tweens });
+        console.log(element);
+        moves.push(element);
+        done();
       },
       enter : function(element, done){
 

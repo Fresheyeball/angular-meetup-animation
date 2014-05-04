@@ -139,8 +139,13 @@ li.candy i{
 
 [counter]{
   height:100px;
-  font-family: 'Open Sans Light';
+  font-family: 'Open Sans';
+  font-weight: 100;
   font-size: 74px;
+}
+
+.count{
+  display: inline-block;
 }
 
 .orb{

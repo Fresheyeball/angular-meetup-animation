@@ -7,20 +7,23 @@
             tl    = null;
         
         if(chars.length){
-
-          tl = new TimelineMax({ onComplete:done })
-          .staggerTo(chars, 0.2, {
-            scale      : 1.5
-          }, 0.1)
-          .to(chars, 0.2, {
-            scale      : 1
+          TweenLite.set(chars,{
+            perspective : 500
           });
+
+          tl = new TimelineMax({ onComplete : done })
+          .staggerTo(chars, 1, {
+            scale      : 1.5
+          }, 0.6)
+          .staggerTo(chars, 1, {
+            scale      : 1
+          }, 0.6).totalDuration(0.5);
 
         }else{ done(); }
 
         return function(){
           if(tl)
-            { tl.kill(); }
+            { tl.pause().kill(); }
         };
 
       }

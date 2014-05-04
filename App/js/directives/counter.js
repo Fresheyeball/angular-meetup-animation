@@ -18,6 +18,9 @@
         });
       },
       link     : function (scope, element, attrs){
+        TweenLite.set(element,{
+          perspective : 500
+        });
         scope.$watch('chars', function(val){
           $animate.addClass(element, scope[attrs.counterAnimation], function(){
             element.removeClass(scope[attrs.counterAnimation]);              

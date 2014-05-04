@@ -11,8 +11,8 @@
     $scope.incrementBy = function(amount){ $scope.count += amount; };
     $scope.increment   = function(){ $scope.incrementBy(1); };
 
-    $scope.stop  = function(){ $interval.cancel(interval); };
-    $scope.start = function(){ 
+    $scope.stop        = function(){ $interval.cancel(interval); interval = null; };
+    $scope.start       = function(){ 
       $scope.stop();
       interval = $interval($scope.increment, SECOND); 
     };    

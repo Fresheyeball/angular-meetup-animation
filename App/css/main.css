@@ -94,33 +94,13 @@ li.candy{
   -webkit-transition : 0.3s background;
 }
 
-li.candy:nth-child(1){
-  background: red;
-}
-
-li.candy:nth-child(2){
-  background: orange;
-}
-
-li.candy:nth-child(3){
-  background: yellow;
-}
-
-li.candy:nth-child(4){
-  background: green;
-}
-
-li.candy:nth-child(5){
-  background: blue;
-}
-
-li.candy:nth-child(6){
-  background: #4B0082;
-}
-
-li.candy:nth-child(7){
-  background: #8F00FF;
-}
+li.candy:nth-child(1){ background: red;     }
+li.candy:nth-child(2){ background: orange;  }
+li.candy:nth-child(3){ background: yellow;  }
+li.candy:nth-child(4){ background: green;   }
+li.candy:nth-child(5){ background: blue;    }
+li.candy:nth-child(6){ background: #4B0082; }
+li.candy:nth-child(7){ background: #8F00FF; }
 
 li.candy i{
   margin-top: 3px;
@@ -138,11 +118,13 @@ li.candy i{
 }
 
 [counter]{
-  height:100px;
+  height:295px;
   font-family: 'Open Sans';
   font-weight: 100;
   font-size: 74px;
-  background: url('http://bestclipartblog.com/clipart-pics/unicorn-clip-art-3.gif');
+  line-height: 74px;
+  background: url('../images/counter.png') top no-repeat;
+  background-size:contain;
   text-align: center;
 }
 
@@ -150,8 +132,19 @@ li.candy i{
   display: inline-block;
   border-radius: 2px;
   margin : 0 1px;
-  background: linear-gradient(white, black);
+  margin-top: 103px;
+  padding : 0 1px;
+  height : 76px;
+  background: #d1d1d1;
+  border : 2px solid rgba(0,0,0,0.5);
+  text-shadow   : 0 1px 1px white, 0 1px 1px white, 0 -1px 1px white, -1px 0 1px white, 1px 1px 1px white, -1px 1px 1px white, 1px -1px 1px white, -1px -1px 1px white;
 }
+
+.count:nth-child(1){ color:red;     }
+.count:nth-child(2){ color:orange;  }
+.count:nth-child(3){ color:yellow;  }
+.count:nth-child(4){ color:green;   }
+.count:nth-child(5){ color:blue;    }
 
 .orb{
   width: 20px;

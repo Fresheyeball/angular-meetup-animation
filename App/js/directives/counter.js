@@ -3,7 +3,8 @@
     return {
       scope    : true,
       template : "<div class='count' ng-repeat='char in chars'>{{char.val}}</div>",
-      controller : function($scope, $attrs){        
+      controller : function($scope, $attrs){ 
+
         var digits = $parse($attrs.counterDigits)($scope);
 
         $scope.chars = [];
@@ -27,6 +28,7 @@
             for(var k = 0; k < digits; k++ ){
               $scope.chars[k].val = parseInt(chars[k]);
             }
+
           }
         });
 

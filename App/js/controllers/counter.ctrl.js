@@ -6,8 +6,8 @@
     $scope.anim        = $scope.animOptions[0];
 
     $interval(function(){
-      $scope.count++;
-    }, 1000);
-    
+      $scope.count = Math.floor(Math.random() * 1000);
+    }, 2000);
+
   });
 }).call(this);

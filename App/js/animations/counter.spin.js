@@ -16,7 +16,7 @@
             rotation   : 360,
             ease       : Back.easeOut
           }, 0.6)
-          .to(chars, 0, {
+          .set(chars, {
             rotation   : 0
           }).totalDuration(0.5);
 

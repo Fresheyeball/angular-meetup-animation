@@ -3,7 +3,7 @@
     var interval       = null,
         SECOND         = 1000;
     $scope.count       = 0;
-    $scope.animOptions = ['none','pop','spin'];
+    $scope.animOptions = ['none','pop','spin','flip'];
     $scope.anim        = $scope.animOptions[0];
     $scope.digits      = 3;
 

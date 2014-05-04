@@ -17,6 +17,7 @@
         };
 
         var onUpdate = function(tval){
+
           console.log(Math.floor(tval));
         };
 
@@ -34,6 +35,8 @@
             });            
           }else{ done(); }
         }, 0, false);
+
+        // do this in a seporat directive
       }
     };
   });

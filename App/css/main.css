@@ -40,8 +40,12 @@ h1:first-child{
 
 .c50{
   display: inline-block;
-  width :50%;
-  vertical-align: top;  
+  width :48%;
+  vertical-align: top;
+}
+
+.c50:last-child{
+  margin-left: 4%;
 }
 
 nav{
@@ -101,6 +105,50 @@ li.candy:nth-child(4){ background: green;   }
 li.candy:nth-child(5){ background: blue;    }
 li.candy:nth-child(6){ background: #4B0082; }
 li.candy:nth-child(7){ background: #8F00FF; }
+li.candy:nth-child(8){ background: red;     }
+li.candy:nth-child(9){ background: orange;  }
+li.candy:nth-child(10){ background: yellow; }
+li.candy:nth-child(11){ background: green;   }
+li.candy:nth-child(12){ background: blue;    }
+li.candy:nth-child(13){ background: #4B0082; }
+li.candy:nth-child(14){ background: #8F00FF; }
+li.candy:nth-child(15){ background: red;     }
+li.candy:nth-child(16){ background: orange;  }
+li.candy:nth-child(17){ background: yellow;  }
+li.candy:nth-child(18){ background: green;   }
+li.candy:nth-child(19){ background: blue;    }
+li.candy:nth-child(20){ background: #4B0082; }
+li.candy:nth-child(21){ background: #8F00FF; }
+li.candy:nth-child(22){ background: red;     }
+li.candy:nth-child(23){ background: orange;  }
+li.candy:nth-child(24){ background: yellow;  }
+li.candy:nth-child(25){ background: green;   }
+li.candy:nth-child(26){ background: blue;    }
+li.candy:nth-child(27){ background: #4B0082; }
+li.candy:nth-child(28){ background: #8F00FF; }
+li.candy:nth-child(29){ background: red;     }
+li.candy:nth-child(30){ background: orange;  }
+li.candy:nth-child(31){ background: yellow;  }
+li.candy:nth-child(32){ background: green;   }
+li.candy:nth-child(33){ background: blue;    }
+li.candy:nth-child(34){ background: #4B0082; }
+li.candy:nth-child(35){ background: #8F00FF; }
+li.candy:nth-child(36){ background: red;     }
+li.candy:nth-child(37){ background: orange;  }
+li.candy:nth-child(38){ background: yellow;  }
+li.candy:nth-child(39){ background: green;   }
+li.candy:nth-child(40){ background: blue;    }
+li.candy:nth-child(41){ background: #4B0082; }
+li.candy:nth-child(42){ background: #8F00FF; }
+li.candy:nth-child(43){ background: red;     }
+li.candy:nth-child(44){ background: orange;  }
+li.candy:nth-child(45){ background: yellow;  }
+li.candy:nth-child(46){ background: green;   }
+li.candy:nth-child(47){ background: blue;    }
+li.candy:nth-child(48){ background: #4B0082; }
+li.candy:nth-child(49){ background: #8F00FF; }
+li.candy:nth-child(50){ background: red;     }
+
 
 li.candy i{
   margin-top: 3px;

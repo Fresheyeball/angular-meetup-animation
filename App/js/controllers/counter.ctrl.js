@@ -8,8 +8,8 @@
     $scope.digits      = 3;
     $scope.by          = 1;
 
-    $scope.random      = function(){ $scope.count = Math.floor(Math.random() * 999); };
-    $scope.increment   = function(){ $scope.count += $scope.by; };
+    $scope.random      = function(){ $scope.count = _.random(999); };
+    $scope.increment   = function(){ $scope.count += $scope.by;    };
 
     $scope.stop        = function(){ $interval.cancel(interval); interval = null; };
     $scope.start       = function(){ 

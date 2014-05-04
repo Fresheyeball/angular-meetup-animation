@@ -4,8 +4,7 @@
 
     $routeProvider
       .when('/index', {
-        templateUrl : 'partials/index.html',
-        controller  : 'indexCtrl'
+        templateUrl : 'partials/index.html'
       })
       .when('/css3', {
         templateUrl : 'partials/css3.html',

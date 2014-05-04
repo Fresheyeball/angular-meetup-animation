@@ -1,0 +1,18 @@
+<h2>Breaking the universe</h2>
+<div class="example">
+  <div class="c50">
+    <strong>Standing</strong>
+    <ul class="candy">
+      <li class="candy" ng-repeat="state in standingStates track by state.name">
+        {{state.name}}<a ng-click="moveToDestroyed($index)">-></a>
+      </li>
+    </ul>
+  </div><div class="c50">
+    <strong>Destroyed</strong>
+    <ul class="candy">
+      <li class="candy" ng-repeat="state in destroyedStates track by state.name">
+        <a ng-click="moveToStanding($index)"><-</a>{{state.name}}
+      </li>
+    </ul>
+  </div>
+</div>

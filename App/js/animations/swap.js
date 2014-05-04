@@ -1,24 +1,38 @@
 (function(){
-  var amm = angular.module('meetup');
+  var amm = angular.module('meetup'),
+      tl  = null;
 
   amm.directive('swappable', function($timeout){
+    var setPositionsInRepeat = function(element){
+      $timeout(function(){
+        var candy = element[0].querySelectorAll('.candy');
+        for(var i = 0; i < candy.length; i++){
+          TweenLite.set(candy[i],{ y : i * 35 });
+        }       
+        TweenLite.set(element[0], { height : candy.length * 35 });        
+      }, 0, false);
+    };
+
     return {
       link : function(scope, element, attrs){
-        $timeout(function(){
-          var candy = element[0].querySelectorAll('.candy');
-          for(var i = 0; i < candy.length; i++){
-            TweenLite.set(candy[i],{
-              y : i * 35
-            });
-          }       
-          TweenLite.set(element[0], { height : candy.length * 35 });
-        }, 0, false); 
+        setPositionsInRepeat(element); 
+        scope.$watch(function(){
+          setPositionsInRepeat(element); 
+        });
       }
     };
   });
 
-  amm.animation('.swap', function(){
+  amm.animation('.swap', function($timeout){
+    var addToMove = function(element){
+
+    };
+
     return {
+      move  : function(element, done){
+
+        // tl = new TimelineLite({tweens : tweens });
+      },
       enter : function(element, done){
 
         var tl = new TweenLite.fromTo(element[0], 0.3, {

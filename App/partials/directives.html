@@ -1,5 +1,13 @@
 <h1>Directives</h1>
 <h2>Example</h2>
 <div class="example">
-  <div counter="count" counter-animation="anim"></div>
+  <div 
+    counter="count" 
+    counter-animation="anim"
+    ></div>
+  <select 
+    ng-model="anim"
+    >
+    <option ng-repeat="opt in animOptions">{{opt}}</option>
+  </select>
 </div>

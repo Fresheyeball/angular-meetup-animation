@@ -3,14 +3,25 @@
     return {
       addClass : function(element, className, done){
 
-        var chars = element[0].querySelectorAll('.count');
+        var chars = element[0].querySelectorAll('.count'),
+            tl    = null;
         
         if(chars.length){
-          console.log('add');
-          TweenMax.staggerTo(chars, 0.3, {
+
+          tl = new TimelineMax({ onComplete:done })
+          .staggerTo(chars, 0.2, {
             scale      : 1.5
-          }, 0.2, done);          
+          }, 0.1)
+          .to(chars, 0.2, {
+            scale      : 1
+          });
+
         }else{ done(); }
+
+        return function(){
+          if(tl)
+            { tl.kill(); }
+        };
 
       }
     };

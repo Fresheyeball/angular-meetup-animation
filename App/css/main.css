@@ -117,7 +117,7 @@ li.candy i{
   border: 2px dashed rgba(255,215,40,0.85);
 }
 
-[anim-counter]{
+[anim-counter],[tween-counter]{
   height:295px;
   font-family: 'Open Sans';
   font-weight: 100;

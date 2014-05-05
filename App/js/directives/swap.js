@@ -6,43 +6,30 @@
     return {
       scope : true,
       controller : function($scope, $attrs){
-        this.elems = [];
+        this.tweens = [];
 
-        $scope.$watchCollection($attrs.swappable, function(val){ $scope.states = val; });
-        
-        this.addElement = function(element){
-          this.elems.push(element);
-        };
-        this.removeElement = function(element){
-          console.log('remove', element);
-          this.elems = _.without(this.elems, element);
+        $scope.$watchCollection($attrs.swappable, function(val){ 
+          $scope.states = val; 
+        });
+
+        this.animate = function(){
+          new TimelineLite({tweens : this.tweens}).totalDuration(1);
+          this.tweens = [];
         };
 
       },
       link : function(scope, element, attrs, ctrl){
-
-        $timeout(function(){
-          TweenLite.set(element[0], {
-            height : scope.states.length * CANDY_HEIGHT
-          });
-        }, 0, false);
-
-        var firster = true;
-        scope.$watchCollection('states', function(){
-          var tweens = [];
-          $timeout(function(){
-            for(var i = 0; i < ctrl.elems.length; i++){
-              tweens.push(new TweenLite.to(ctrl.elems[i], 2, {
-                y     : i * CANDY_HEIGHT,
-                delay : i
-              }));
-              var durration = firster ? 0 : 2; firster = false;
-              new TimelineLite({tweens:tweens}).totalDuration(durration);
-            }
+        var tm = null;
+        scope.$watch(function(){
+          $timeout.cancel(tm);
+          tm = $timeout(function(){
+            new TweenLite.set(element[0], {
+              height : scope.states.length * CANDY_HEIGHT
+            });
           }, 0, false);
         });
-
       }
+
     };
   });
 
@@ -50,10 +37,38 @@
     return {
       require : '^swappable',
       link    : function(scope, element, attrs, ctrl){
-        ctrl.addElement(element);
-        scope.$on('$destroy', function(){
-          ctrl.removeElement(element);
+        var tm = null; 
+        element[0].removeAttribute('style');
+        scope.$watch(function(){
+          $timeout.cancel(tm);
+          $timeout(function(){
+            if(element[0]._gsTransform && element[0]._gsTransform.y > 0){
+              ctrl.tweens.push( new TweenLite.to( element[0], 0.3, { 
+                y     : scope.$index * CANDY_HEIGHT,
+                delay : scope.$index * 0.05
+              }));
+            }else{
+              TweenLite.set(element[0],    { y : scope.$index * CANDY_HEIGHT });
+            }
+            if(scope.$index === scope.states.length - 1){
+              ctrl.animate();
+            }            
+          }, 0, false);
         });
+
+      }
+    };
+  });
+
+  amm.animation('.swap', function(){
+    return {
+      enter : function(element, done){
+        TweenLite.from(element[0], 0.3, {
+          opacity : 0,
+          height  : 0,
+          padding : 0
+        });
+        done();
       }
     };
   });

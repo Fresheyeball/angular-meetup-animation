@@ -3,14 +3,14 @@
   <div class="c50">
     <strong>Standing</strong>
     <ul class="candy" swappable="standingStates">
-      <li class="candy" swap ng-repeat="state in standingStates track by state.name">
+      <li class="candy swap" swap="state" ng-repeat="state in standingStates track by state.name">
         {{state.name}}<a ng-click="moveToDestroyed($index)"><i class="fa fa-arrow-right"></i></a>
       </li>
     </ul>
   </div><div class="c50">
     <strong>Destroyed</strong>
     <ul class="candy" swappable="destroyedStates">
-      <li class="candy" swap ng-repeat="state in destroyedStates track by state.name">
+      <li class="candy swap" swap="state" ng-repeat="state in destroyedStates track by state.name">
         <a ng-click="moveToStanding($index)"><i class="fa fa-arrow-left"></i></a>{{state.name}}
       </li>
     </ul>

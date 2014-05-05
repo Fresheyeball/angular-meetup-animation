@@ -225,3 +225,7 @@ div.candy i, li.candy i{
   -webkit-animation:grow 120s;
 }
 
+[ng-click]{
+  cursor: pointer;
+}
+

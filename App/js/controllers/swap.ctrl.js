@@ -40,7 +40,7 @@
     $scope.stop  = function(){ $interval.cancel(inter); };
     $scope.start = function(){
       $scope.stop();
-      inter = $interval($scope.random, SECOND);
+      inter = $interval($scope.random, SECOND * 2);
     };
 
   });

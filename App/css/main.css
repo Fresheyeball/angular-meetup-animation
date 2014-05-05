@@ -59,7 +59,7 @@ nav a{
   text-decoration: none;
   display: block;
   padding: 5px;
-  padding-right 0;
+  padding-right : 0;
   width  : 120px;
   border-bottom: 1px dotted DarkSlateGray;
   text-transform: uppercase;
@@ -189,11 +189,11 @@ div.candy i, li.candy i{
   text-shadow   : 0 1px 1px white, 0 1px 1px white, 0 -1px 1px white, -1px 0 1px white, 1px 1px 1px white, -1px 1px 1px white, 1px -1px 1px white, -1px -1px 1px white;
 }
 
-.count:nth-child(1){ color:#d93e3e;     }
-.count:nth-child(2){ color:#d9a23e;  }
-.count:nth-child(3){ color:#d8d93e;  }
-.count:nth-child(4){ color:#2c792c;   }
-.count:nth-child(5){ color:#3e3ed9;    }
+.count:nth-child(1){ color:#d93e3e; }
+.count:nth-child(2){ color:#d9a23e; }
+.count:nth-child(3){ color:#d8d93e; }
+.count:nth-child(4){ color:#2c792c; }
+.count:nth-child(5){ color:#3e3ed9; }
 
 .smallInt{
   width : 45px;
@@ -207,4 +207,9 @@ div.candy i, li.candy i{
 
 .candy[swap]{
   position: absolute;
+}
+
+.puke{
+  background: url('../images/rainbowpuke.jpg') bottom right no-repeat;
+  background-size: 75% 75%;
 }

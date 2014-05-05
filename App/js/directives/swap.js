@@ -1,6 +1,7 @@
 (function(){
-  var amm   = angular.module('meetup'),
-      CANDY_HEIGHT = 35;
+  var amm          = angular.module('meetup'),
+      CANDY_HEIGHT = 35, 
+      transport    = null;
 
   amm.directive('swappable', function($timeout){
     return {
@@ -42,7 +43,7 @@
         scope.$watch(function(){
           $timeout.cancel(tm);
           $timeout(function(){
-            if(element[0]._gsTransform && element[0]._gsTransform.y > 0){
+            if(element[0]._gsTransform && element[0]._gsTransform.y){
               ctrl.tweens.push( new TweenLite.to( element[0], 0.3, { 
                 y     : scope.$index * CANDY_HEIGHT,
                 delay : scope.$index * 0.05
@@ -70,13 +71,43 @@
           onComplete : done
         });
       },
-      leave : function(element, done){
+      leave : function(element, done){        
         TweenLite.to(element[0], 0.3, {
           opacity : 0,
           height  : 0,
           padding : 0,
           onComplete : done
-        })
+        });
+        var transport = element.clone(),
+            example   = document.querySelectorAll('.example')[0];
+
+        transport = angular.element(transport[0].outerHTML.replace('li', 'div'));
+
+        var elementStyle    = getComputedStyle(element[0]),
+            backgroundColor = elementStyle.backgroundColor,
+            marginTop       = parseInt(elementStyle.marginTop) * 2,
+            elementposition = element[0].getBoundingClientRect(),
+            parentPosition  = example.getBoundingClientRect(),
+            position        = {
+              top  : elementposition.top - parentPosition.top - marginTop,
+              left : elementposition.left - parentPosition.left - marginTop
+            };
+
+        TweenLite.set(transport, {
+          x : position.left,
+          y : position.top,
+          background : getComputedStyle(element[0]).backgroundColor,
+          position : 'absolute',
+          width : element[0].clientWidth,
+          height : CANDY_HEIGHT,
+          left : 0,
+          top : 0
+        });
+
+        angular.element(example).append(transport);
+
+        transport(transport);
+
       }
     };
   });

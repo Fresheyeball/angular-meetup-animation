@@ -44,8 +44,8 @@ h1:first-child{
   vertical-align: top;
 }
 
-.c50:last-child{
-  margin-left: 4%;
+.c50.cfirst{
+  margin-right: 4%;
 }
 
 nav{
@@ -85,7 +85,7 @@ ul.candy{
   position: relative;
 }
 
-li.candy{
+li.candy, div.candy{
   padding       : 5px;
   border-radius : 3px;
   list-style    : none;
@@ -150,7 +150,7 @@ li.candy:nth-child(49){ background: #8F00FF; }
 li.candy:nth-child(50){ background: red;     }
 
 
-li.candy i{
+div.candy i, li.candy i{
   margin-top: 3px;
   float : right;
   cursor: pointer;
@@ -160,6 +160,7 @@ li.candy i{
 }
 
 .example{
+  position: relative;
   padding: 20px;
   border-radius: 5px;
   border: 2px dashed rgba(255,215,40,0.85);
@@ -204,6 +205,6 @@ li.candy i{
   z-index: -1;
 }
 
-li.candy[swap]{
+.candy[swap]{
   position: absolute;
 }

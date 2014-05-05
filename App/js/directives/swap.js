@@ -1,6 +1,6 @@
 (function(){
   var amm             = angular.module('meetup'),
-      CANDY_HEIGHT    = 35,
+      SWAP_HEIGHT    = 35,
       TRANSPORT_CLASS = 'transport',
       transit         = null;
 
@@ -26,7 +26,7 @@
           $timeout.cancel(tm);
           tm = $timeout(function(){
             new TweenLite.set(element[0], {
-              height : scope.states.length * CANDY_HEIGHT
+              height : scope.states.length * SWAP_HEIGHT
             });
           }, 0, false);
         });
@@ -57,6 +57,8 @@
                   left : destinationPosition.left - parentPosition.left - marginTop
                 };
 
+            angular.element(desinationElement).addClass('destin');
+
             new TimelineLite().to(transport, 1, {
               y : position.top,
               x : position.left,
@@ -73,7 +75,7 @@
               }
             });
 
-          }, 0, false);}, 0, false);
+          }, 0, false); }, 0, false);
         };
       }
 
@@ -91,11 +93,11 @@
           $timeout(function(){
             if(element[0]._gsTransform && element[0]._gsTransform.y){
               ctrl.tweens.push( new TweenLite.to( element[0], 0.3, { 
-                y     : scope.$index * CANDY_HEIGHT,
+                y     : scope.$index * SWAP_HEIGHT,
                 delay : scope.$index * 0.05
               }));
             }else{
-              TweenLite.set(element[0], { y : scope.$index * CANDY_HEIGHT });
+              TweenLite.set(element[0], { y : scope.$index * SWAP_HEIGHT });
             }
             if(scope.$index === scope.states.length - 1){
               ctrl.animate();
@@ -145,10 +147,12 @@
           background : getComputedStyle(element[0]).backgroundColor,
           position   : 'absolute',
           width      : element[0].clientWidth,
-          height     : CANDY_HEIGHT - (marginTop / 2),
+          height     : SWAP_HEIGHT - (marginTop / 2),
           left       : 0,
           top        : 0
         });
+
+        element.addClass(TRANSPORT_CLASS);
 
         transport.addClass(TRANSPORT_CLASS);
 

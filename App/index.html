@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Angular Meetup, Animation</title>
+
+    <!-- deps -->
+    <script src="/vendor/angular/angular.js"                                     ></script>
+    <script src="/vendor/angular-route/angular-route.js"                         ></script>
+    <script src="/vendor/angular-animate/angular-animate.js"                     ></script>
+    <script src="/vendor/highlightjs/highlight.pack.js"                          ></script>
+    <script src="/vendor/angular-highlightjs/angular-highlightjs.js"             ></script>
+    <script src="/vendor/lodash/dist/lodash.js"                                  ></script>
+    <script src="/vendor/greensock/src/minified/TweenMax.min.js"                 ></script>
+    <script src="/vendor/greensock/src/minified/TimelineMax.min.js"              ></script>
+    <script src="/vendor/mocha/mocha.js"                                         ></script>
+    <script src="/vendor/chai/chai.js"                                           ></script>
+    <script src="/vendor/sinonjs/sinon.js"                                       ></script>
+
+    <!-- app -->
+    <script src="/js/config/module.js"                                           ></script>
+    <script src="/js/config/routes.js"                                           ></script>
+    <script src="/js/animations/explosivo.js"                                    ></script>
+    <script src="/js/animations/vertical.js"                                     ></script>
+    <script src="/js/animations/counter.pop.js"                                  ></script>
+    <script src="/js/animations/counter.spin.js"                                 ></script>
+    <script src="/js/animations/counter.flip.js"                                 ></script>
+    <script src="/js/controllers/collection.ctrl.js"                             ></script>
+    <script src="/js/controllers/counter.ctrl.js"                                ></script>
+    <script src="/js/controllers/swap.ctrl.js"                                   ></script>
+    <script src="/js/controllers/test.ctrl.js"                                   ></script>
+    <script src="/js/directives/anim-counter.js"                                 ></script>
+    <script src="/js/directives/tween-counter.js"                                ></script>
+    <script src="/js/directives/swap.js"                                         ></script>
+    <script src="/js/test/greensock.mock.js"                                     ></script>
+
+    <!-- styles -->
+    <link rel="stylesheet" href="/vendor/open-sans-fontface/open-sans.css"                >
+    <link rel="stylesheet" href="/vendor/Font-Awesome/css/font-awesome.css"               >
+    <link rel="stylesheet" href="/vendor/highlightjs/styles/default.css"                  >
+    <link rel="stylesheet" href="/vendor/normalize-css/normalize.css"                     >
+    <link rel="stylesheet" href="/vendor/mocha/mocha.css"                                 >
+    <link rel="stylesheet" href="/css/main.css"                                           >
+    <link rel="stylesheet" href="/css/slide.css"                                          >
+    <link rel="stylesheet" href="/css/vertical.css"                                       >
+
+  </head>
+  <body ng-app="meetup">
+    <header>
+      <img src="/images/angular-logo.jpeg" id="logo">
+      <h2>Meetup : Animation</h2>
+    </header>
+    <nav>
+      <a href="#/index">home</a>
+      <a href="#/css3">CSS3 Transitions</a>
+      <a href="#/greensock">GreenSock</a>
+      <a href="#/css-vs-js">CSS3 vs JS</a>
+      <a href="#/directives">Directives</a>
+      <a href="#/swap">Transporting</a>
+      <a href="#/unit">Unit Testing</a>
+    </nav>
+    <section ng-view class="slide"></section>
+  </body>
+</html>

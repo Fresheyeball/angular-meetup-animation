@@ -1,0 +1,201 @@
+<h1>Directives</h1>
+<h2>Example</h2>
+<div class="example">
+  <div 
+    anim-counter="count"
+    anim-counter-digits="digits"
+    anim-counter-animation="anim"
+    ></div>
+  <form>
+    <label>Animate with:</label>
+    <select 
+      ng-model="anim">
+      <option
+        ng-repeat="opt in animOptions"
+        >{{opt}}</option>
+    </select>
+    <br/>
+    <label>Increment By:</label>
+    <input ng-model="by" type="number" class="smallInt"/>
+    <button ng-click="stop()">Stop</button>
+    <button ng-click="start()">Start</button>
+    <button ng-click="random()">Random</button>
+  </form>
+</div>
+<h2>Code</h2>
+<div hljs>
+  <div 
+    anim-counter="count"
+    anim-counter-digits="digits"
+    anim-counter-animation="anim"
+    ></div>  
+</div>
+<div hljs>
+  ...
+  link     : function (scope, element, attrs){
+
+    scope.$watch('chars', function(val){
+      $animate.addClass(element, scope[attrs.animCounterAnimation], function(){
+        element.removeAttr('class');
+      });
+    }, true);
+
+  }
+  ...
+</div>
+<div hljs>
+ angular.module('meetup').animation('.pop', function(){
+    return {
+      addClass : function(element, className, done){
+
+        var chars = element[0].querySelectorAll('.count'),
+            tl    = null;
+        
+        if(chars.length){
+          TweenLite.set(chars,{
+            perspective : 500
+          });
+
+          tl = new TimelineMax({ onComplete : done })
+          .staggerTo(chars, 1, {
+            scale      : 1.5,
+            ease       : Cubic.easeOut
+          }, 0.6)
+          .staggerTo(chars, 1, {
+            scale      : 1,
+            ease       : Back.easeOut
+          }, 0.6).totalDuration(0.5);
+
+        }else{ done(); }
+
+        return function(){
+          if(tl)
+            { tl.pause().kill(); }
+        };
+
+      }
+    };
+  });
+</div>
+<div hljs>
+  angular.module('meetup').animation('.spin', function(){
+    return {
+      addClass : function(element, className, done){
+
+        var chars = element[0].querySelectorAll('.count'),
+            tl    = null;
+        
+        if(chars.length){
+          TweenLite.set(chars,{
+            perspective : 500
+          });
+
+          tl = new TimelineMax({ onComplete : done })
+          .staggerTo(chars, 1, {
+            rotation   : 360,
+            ease       : Cubic.easeOut
+          }, 0.6)
+          .set(chars, {
+            rotation   : 0
+          }).totalDuration(0.5);
+
+        }else{ done(); }
+
+        return function(){
+          if(tl)
+            { tl.pause().kill(); }
+        };
+
+      }
+    };
+  });
+</div>
+<div hljs>
+  angular.module('meetup').animation('.flip', function(){
+    return {
+      addClass : function(element, className, done){
+
+        var chars = element[0].querySelectorAll('.count'),
+            tl    = null;
+        
+        if(chars.length){
+          TweenLite.set(element[0],{
+            perspective : 500
+          });
+
+          tl = new TimelineMax({ onComplete : done })
+          .set(chars, {
+            opacity   : 0,
+            rotationX : 90
+          })
+          .staggerTo(chars, 1, {
+            opacity    : 1,
+            rotationX  : 0,
+            ease       : Back.easeOut
+          }, 0.6)
+          .totalDuration(0.5);
+
+        }else{ done(); }
+
+        return function(){
+          if(tl)
+            { tl.pause().kill(); }
+        };
+
+      }
+    };
+  });
+</div>
+<h2>Example 2 : The Re-Exampling</h2>
+<div class="example">
+  <div 
+    tween-counter="count"
+    tween-counter-digits="digits"
+    ></div>
+  <form>
+    <label>Increment By:</label>
+    <input ng-model="by" type="number" class="smallInt"/>
+    <button ng-click="stop()">Stop</button>
+    <button ng-click="start()">Start</button>
+    <button ng-click="random()">Random</button>
+  </form>
+</div>
+<h2>Code</h2>
+<div hljs>
+...
+controller : function($scope, $attrs){ 
+
+  ...
+
+  $scope.$watch($attrs.tweenCounter, function(newVal, oldVal){
+    var tprop = { val : oldVal };
+    if(tl)
+      { tl.kill(); }
+    new TweenLite.to(tprop, 1, {
+      val : newVal,
+      onUpdate : function(){
+        $scope._count = Math.floor(tprop.val);
+        $scope.$digest();
+      }
+    });
+  });
+
+  $scope.$watch('_count', function(val){
+    if(val || val === 0){ 
+      var chars = (val + '').split('').map(function(x){ return parseInt(x); });
+
+      if(chars.length < digits){
+        var delta = digits - chars.length;
+        for(var j = 0; j < delta; j++ ){
+          chars.unshift(0);
+        }              
+      }
+
+      for(var k = 0; k < digits; k++ ){
+        $scope.chars[k].val = parseInt(chars[k]);
+      }
+
+    }
+  });
+}
+</div>

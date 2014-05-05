@@ -1,0 +1,39 @@
+<h1>Animations!</h1>
+<p>Since angular 1.2.x animations are class based regardless of if the animation is css3 or javascript based.
+Out of the box angular will add and remove classes for:</p>
+<img src="http://img3.wikia.nocookie.net/__cb20130408185956/glee/images/3/3b/Unicorn_rainbow_gif_by_unicorn808-d557jqj.gif" class="homegif"/>
+<ul>
+  <li>ng-repeat</li>
+  <li>ng-view</li>
+  <li>ng-include</li>
+  <li>ng-switch</li>
+  <li>ng-if</li>
+  <li>ng-class</li>
+  <li>ng-show, ng-hide</li>
+  <li>forms</li>
+</ul>
+<p>When animating you should be considering:</p>
+<ul>
+  <li>Why am I animating this element?</li>
+  <li>Visual Context</li>
+  <li>Relationships to other animations</li>
+  <li>Feeling of Mass</li>
+  <li>Feeling of Speed</li>
+  <li>Feeling of Power</li>
+</ul>
+<a ng-init="showCode = false" ng-click="showCode = !showCode">Toggle Code</a>
+<div ng-show="showCode">
+  <h2>Code</h2>
+  <div hljs>
+    @-webkit-keyframes grow{
+      from{ height : 40px;  }
+      to  { height : 260px; }
+    }
+
+    .homegif{
+      float : right;
+      height : 260px;
+      -webkit-animation:grow 120s;
+    }
+  </div>
+</div>

@@ -1,6 +1,7 @@
 (function(){
-  var STATES = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','Florida','Georgia','Hawaii','Idaho','Illinois Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
-  STATES.length = 25;
+  var STATES        = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','Florida','Georgia','Hawaii','Idaho','Illinois Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
+      STATES.length = 25,
+      SECOND        = 1000;
 
   angular.module('meetup').controller('swapCtrl', function($scope, $interval){
     var setStatesFrom = function(states){
@@ -33,6 +34,13 @@
 
     $scope.random = function(){
       setStatesFrom(_.shuffle(STATES));
+    };
+
+    var inter    = null;
+    $scope.stop  = function(){   $interval.cancel(inter); };
+    $scope.start = function(){
+      $scope.stop();
+      $interval($scope.random, SECOND);
     };
 
   });

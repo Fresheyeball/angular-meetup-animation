@@ -9,6 +9,7 @@
     "angular-animate": "~1.2.16",
     "angular-highlightjs": "~0.2.7",
     "highlight": "~7.0.1",
-    "Font-Awesome": "~4.0.3"
+    "Font-Awesome": "~4.0.3",
+    "open-sans-fontface": "~1.0.4"
   }
 }

@@ -66,9 +66,17 @@
         TweenLite.from(element[0], 0.3, {
           opacity : 0,
           height  : 0,
-          padding : 0
+          padding : 0,
+          onComplete : done
         });
-        done();
+      },
+      leave : function(element, done){
+        TweenLite.to(element[0], 0.3, {
+          opacity : 0,
+          height  : 0,
+          padding : 0,
+          onComplete : done
+        })
       }
     };
   });

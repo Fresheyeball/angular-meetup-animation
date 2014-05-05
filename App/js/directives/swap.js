@@ -1,6 +1,6 @@
 (function(){
   var amm             = angular.module('meetup'),
-      SWAP_HEIGHT    = 35,
+      SWAP_HEIGHT     = 35,
       TRANSPORT_CLASS = 'transport',
       transit         = null;
 
@@ -11,7 +11,7 @@
         this.tweens = [];
 
         $scope.$watchCollection($attrs.swappable, function(val){ 
-          $scope.states = val; 
+          $scope.coll = val; 
         });
 
         this.animate = function(){
@@ -26,7 +26,7 @@
           $timeout.cancel(tm);
           tm = $timeout(function(){
             new TweenLite.set(element[0], {
-              height : scope.states.length * SWAP_HEIGHT
+              height : scope.coll.length * SWAP_HEIGHT
             });
           }, 0, false);
         });
@@ -59,7 +59,7 @@
 
             angular.element(desinationElement).addClass('destin');
 
-            new TimelineLite().to(transport, 1, {
+            new TimelineLite().to(transport, 0.3, {
               y : position.top,
               x : position.left,
               background : backgroundColor,
@@ -68,7 +68,7 @@
                   opacity : 1
                 });
               }
-            }).to(transport, 0.5, {
+            }).to(transport, 0.3, {
               opacity : 0,
               onComplete : function(){
                 angular.element(transport).remove();
@@ -99,7 +99,7 @@
             }else{
               TweenLite.set(element[0], { y : scope.$index * SWAP_HEIGHT });
             }
-            if(scope.$index === scope.states.length - 1){
+            if(scope.$index === scope.coll.length - 1){
               ctrl.animate();
             }            
           }, 0, false);
@@ -152,8 +152,7 @@
           top        : 0
         });
 
-        element.addClass(TRANSPORT_CLASS);
-
+        element  .addClass(TRANSPORT_CLASS);
         transport.addClass(TRANSPORT_CLASS);
 
         angular.element(example).append(transport);

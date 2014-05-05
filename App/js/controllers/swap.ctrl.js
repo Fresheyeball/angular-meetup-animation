@@ -2,7 +2,7 @@
   var STATES = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','Florida','Georgia','Hawaii','Idaho','Illinois Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
   STATES.length = 25;
 
-  angular.module('meetup').controller('swapCtrl', function($scope){
+  angular.module('meetup').controller('swapCtrl', function($scope, $interval){
     var setStatesFrom = function(states){
       $scope.standingStates = [];
       for(var i = 0; i < states.length; i++){     $scope.standingStates.push({ name : states[i] }); }
@@ -13,10 +13,18 @@
     var moveState = function(from, to){
       return function(moveIndex){
         $scope[to].push($scope[from][moveIndex]);
-        $scope[to] = _.sortBy($scope[to], 'name');
         $scope[from].splice(moveIndex, 1);
+        sort();
       }
     }
+
+    var sort = function(){
+      var _sort = function(k){
+        $scope[k] = _.sortBy($scope[k], 'name');
+      };
+      _sort('standingStates');
+      _sort('destroyedStates');
+    };
 
     $scope.moveToDestroyed = moveState('standingStates',  'destroyedStates');
     $scope.moveToStanding  = moveState('destroyedStates', 'standingStates');

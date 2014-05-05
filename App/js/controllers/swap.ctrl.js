@@ -37,10 +37,10 @@
     };
 
     var inter    = null;
-    $scope.stop  = function(){   $interval.cancel(inter); };
+    $scope.stop  = function(){ $interval.cancel(inter); };
     $scope.start = function(){
       $scope.stop();
-      $interval($scope.random, SECOND);
+      inter = $interval($scope.random, SECOND);
     };
 
   });

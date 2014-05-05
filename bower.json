@@ -11,6 +11,8 @@
     "highlight": "~7.0.1",
     "Font-Awesome": "~4.0.3",
     "open-sans-fontface": "~1.0.4",
-    "mocha": "~1.18.2"
+    "mocha": "~1.18.2",
+    "chai": "~1.9.1",
+    "sinonjs": "~1.9.1"
   }
 }

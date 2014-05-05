@@ -14,7 +14,7 @@
         controller  : 'collectionCtrl'
       })
       .when('/css-vs-js', {
-        templateUrl : 'partials/css-vs-js.html'        
+        templateUrl : 'partials/css-vs-js.html'
       })
       .when('/directives', {
         templateUrl : 'partials/directives.html',
@@ -25,7 +25,8 @@
         controller  : 'swapCtrl'
       })
       .when('/unit', {
-        templateUrl : 'partials/unit.html'
+        templateUrl : 'partials/unit.html',
+        controller  : 'testCtrl'
       })
       .otherwise({
         redirectTo : '/index'

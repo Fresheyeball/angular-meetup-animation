@@ -98,56 +98,56 @@ li.candy, div.candy{
   -webkit-transition : 0.3s background;
 }
 
-li.candy:nth-child(1){ background: red;     }
-li.candy:nth-child(2){ background: orange;  }
-li.candy:nth-child(3){ background: yellow;  }
-li.candy:nth-child(4){ background: green;   }
-li.candy:nth-child(5){ background: blue;    }
-li.candy:nth-child(6){ background: #4B0082; }
-li.candy:nth-child(7){ background: #8F00FF; }
-li.candy:nth-child(8){ background: red;     }
-li.candy:nth-child(9){ background: orange;  }
-li.candy:nth-child(10){ background: yellow; }
-li.candy:nth-child(11){ background: green;   }
-li.candy:nth-child(12){ background: blue;    }
-li.candy:nth-child(13){ background: #4B0082; }
-li.candy:nth-child(14){ background: #8F00FF; }
-li.candy:nth-child(15){ background: red;     }
-li.candy:nth-child(16){ background: orange;  }
-li.candy:nth-child(17){ background: yellow;  }
-li.candy:nth-child(18){ background: green;   }
-li.candy:nth-child(19){ background: blue;    }
-li.candy:nth-child(20){ background: #4B0082; }
-li.candy:nth-child(21){ background: #8F00FF; }
-li.candy:nth-child(22){ background: red;     }
-li.candy:nth-child(23){ background: orange;  }
-li.candy:nth-child(24){ background: yellow;  }
-li.candy:nth-child(25){ background: green;   }
-li.candy:nth-child(26){ background: blue;    }
-li.candy:nth-child(27){ background: #4B0082; }
-li.candy:nth-child(28){ background: #8F00FF; }
-li.candy:nth-child(29){ background: red;     }
-li.candy:nth-child(30){ background: orange;  }
-li.candy:nth-child(31){ background: yellow;  }
-li.candy:nth-child(32){ background: green;   }
-li.candy:nth-child(33){ background: blue;    }
-li.candy:nth-child(34){ background: #4B0082; }
-li.candy:nth-child(35){ background: #8F00FF; }
-li.candy:nth-child(36){ background: red;     }
-li.candy:nth-child(37){ background: orange;  }
-li.candy:nth-child(38){ background: yellow;  }
-li.candy:nth-child(39){ background: green;   }
-li.candy:nth-child(40){ background: blue;    }
-li.candy:nth-child(41){ background: #4B0082; }
-li.candy:nth-child(42){ background: #8F00FF; }
-li.candy:nth-child(43){ background: red;     }
-li.candy:nth-child(44){ background: orange;  }
-li.candy:nth-child(45){ background: yellow;  }
-li.candy:nth-child(46){ background: green;   }
-li.candy:nth-child(47){ background: blue;    }
-li.candy:nth-child(48){ background: #4B0082; }
-li.candy:nth-child(49){ background: #8F00FF; }
-li.candy:nth-child(50){ background: red;     }
+li.candy:nth-child(1){ background: #d93e3e;  }
+li.candy:nth-child(2){ background: #d9a23e;  }
+li.candy:nth-child(3){ background: #d8d93e;  }
+li.candy:nth-child(4){ background: #2c792c;  }
+li.candy:nth-child(5){ background: #3e3ed9;  }
+li.candy:nth-child(6){ background: #5a2c7b;  }
+li.candy:nth-child(7){ background: #953ed9;  }
+li.candy:nth-child(8){ background: #d93e3e;  }
+li.candy:nth-child(9){ background: #d9a23e;  }
+li.candy:nth-child(10){ background: #d8d93e; }
+li.candy:nth-child(11){ background: #2c792c; }
+li.candy:nth-child(12){ background: #3e3ed9; }
+li.candy:nth-child(13){ background: #5a2c7b; }
+li.candy:nth-child(14){ background: #953ed9; }
+li.candy:nth-child(15){ background: #d93e3e; }
+li.candy:nth-child(16){ background: #d9a23e; }
+li.candy:nth-child(17){ background: #d8d93e; }
+li.candy:nth-child(18){ background: #2c792c; }
+li.candy:nth-child(19){ background: #3e3ed9; }
+li.candy:nth-child(20){ background: #5a2c7b; }
+li.candy:nth-child(21){ background: #953ed9; }
+li.candy:nth-child(22){ background: #d93e3e; }
+li.candy:nth-child(23){ background: #d9a23e; }
+li.candy:nth-child(24){ background: #d8d93e; }
+li.candy:nth-child(25){ background: #2c792c; }
+li.candy:nth-child(26){ background: #3e3ed9; }
+li.candy:nth-child(27){ background: #5a2c7b; }
+li.candy:nth-child(28){ background: #953ed9; }
+li.candy:nth-child(29){ background: #d93e3e; }
+li.candy:nth-child(30){ background: #d9a23e; }
+li.candy:nth-child(31){ background: #d8d93e; }
+li.candy:nth-child(32){ background: #2c792c; }
+li.candy:nth-child(33){ background: #3e3ed9; }
+li.candy:nth-child(34){ background: #5a2c7b; }
+li.candy:nth-child(35){ background: #953ed9; }
+li.candy:nth-child(36){ background: #d93e3e; }
+li.candy:nth-child(37){ background: #d9a23e; }
+li.candy:nth-child(38){ background: #d8d93e; }
+li.candy:nth-child(39){ background: #2c792c; }
+li.candy:nth-child(40){ background: #3e3ed9; }
+li.candy:nth-child(41){ background: #5a2c7b; }
+li.candy:nth-child(42){ background: #953ed9; }
+li.candy:nth-child(43){ background: #d93e3e; }
+li.candy:nth-child(44){ background: #d9a23e; }
+li.candy:nth-child(45){ background: #d8d93e; }
+li.candy:nth-child(46){ background: #2c792c; }
+li.candy:nth-child(47){ background: #3e3ed9; }
+li.candy:nth-child(48){ background: #5a2c7b; }
+li.candy:nth-child(49){ background: #953ed9; }
+li.candy:nth-child(50){ background: #d93e3e; }
 
 
 div.candy i, li.candy i{
@@ -189,11 +189,11 @@ div.candy i, li.candy i{
   text-shadow   : 0 1px 1px white, 0 1px 1px white, 0 -1px 1px white, -1px 0 1px white, 1px 1px 1px white, -1px 1px 1px white, 1px -1px 1px white, -1px -1px 1px white;
 }
 
-.count:nth-child(1){ color:red;     }
-.count:nth-child(2){ color:orange;  }
-.count:nth-child(3){ color:yellow;  }
-.count:nth-child(4){ color:green;   }
-.count:nth-child(5){ color:blue;    }
+.count:nth-child(1){ color:#d93e3e;     }
+.count:nth-child(2){ color:#d9a23e;  }
+.count:nth-child(3){ color:#d8d93e;  }
+.count:nth-child(4){ color:#2c792c;   }
+.count:nth-child(5){ color:#3e3ed9;    }
 
 .smallInt{
   width : 45px;

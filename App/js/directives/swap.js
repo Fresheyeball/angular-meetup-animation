@@ -14,18 +14,21 @@
           $scope.coll = val; 
         });
 
+        var tl = null;
         this.animate = function(){
-          new TimelineLite({tweens : this.tweens}).totalDuration(1);
+          if(tl){ tl.kill(); }
+          tl = new TimelineLite({tweens : this.tweens}).totalDuration(1);
           this.tweens = [];
         };
 
       },
       link : function(scope, element, attrs, ctrl){
         var tm = null;
+
         scope.$watch(function(){
           $timeout.cancel(tm);
           tm = $timeout(function(){
-            new TweenLite.set(element[0], {
+            TweenLite.set(element[0], {
               height : scope.coll.length * SWAP_HEIGHT
             });
           }, 0, false);

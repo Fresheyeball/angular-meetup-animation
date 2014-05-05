@@ -1,7 +1,8 @@
 (function(){
-  var amm          = angular.module('meetup'),
-      CANDY_HEIGHT = 35, 
-      transport    = null;
+  var amm             = angular.module('meetup'),
+      CANDY_HEIGHT    = 35,
+      TRANSPORT_CLASS = 'transport',
+      transit         = null;
 
   amm.directive('swappable', function($timeout){
     return {
@@ -29,6 +30,49 @@
             });
           }, 0, false);
         });
+
+        transit = function(transport, parentPosition, marginTop){
+          $timeout(function(){$timeout(function(){
+            var swaps             = document.querySelectorAll('[swap]'),
+                text              = transport.text().trim(),
+                desinationElement = null;
+
+            for(var i = 0; i < swaps.length; i++){
+              var swap = angular.element(swaps[i]);
+              if(swap.text().trim() === text && !swap.hasClass(TRANSPORT_CLASS)){
+                desinationElement = swap[0];
+              }
+            }
+            
+            if(!desinationElement){ return; }
+
+            TweenLite.set(desinationElement, {
+              opacity : 0
+            });
+
+            var destinationPosition = desinationElement.getBoundingClientRect(),
+                position            = {
+                  top  : destinationPosition.top - parentPosition.top - marginTop,
+                  left : destinationPosition.left - parentPosition.left - marginTop
+                };
+
+            new TimelineLite().to(transport, 1, {
+              y : position.top,
+              x : position.left,
+              onComplete : function(){
+                TweenLite.set(desinationElement, {
+                  opacity : 1
+                });
+              }
+            }).to(transport, 0.5, {
+              opacity : 0,
+              onComplete : function(){
+                angular.element(transport).remove();
+              }
+            });
+
+          }, 0, false);}, 0, false);
+        };
       }
 
     };
@@ -94,19 +138,21 @@
             };
 
         TweenLite.set(transport, {
-          x : position.left,
-          y : position.top,
+          x          : position.left,
+          y          : position.top,
           background : getComputedStyle(element[0]).backgroundColor,
-          position : 'absolute',
-          width : element[0].clientWidth,
-          height : CANDY_HEIGHT,
-          left : 0,
-          top : 0
+          position   : 'absolute',
+          width      : element[0].clientWidth,
+          height     : CANDY_HEIGHT - (marginTop / 2),
+          left       : 0,
+          top        : 0
         });
+
+        transport.addClass(TRANSPORT_CLASS);
 
         angular.element(example).append(transport);
 
-        transport(transport);
+        transit(transport, parentPosition, marginTop);
 
       }
     };

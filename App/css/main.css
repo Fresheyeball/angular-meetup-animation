@@ -213,3 +213,15 @@ div.candy i, li.candy i{
   background: url('../images/rainbowpuke.jpg') bottom right no-repeat;
   background-size: 75% 75%;
 }
+
+@-webkit-keyframes grow{
+  from{ height : 40px;  }
+  to  { height : 260px; }
+}
+
+.homegif{
+  float : right;
+  height : 260px;
+  -webkit-animation:grow 120s;
+}
+

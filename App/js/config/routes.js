@@ -1,6 +1,5 @@
 (function(){
-  angular.module('meetup').config(function($routeProvider, $locationProvider){
-    // $locationProvider.html5Mode(true);
+  angular.module('meetup').config(function($routeProvider){
 
     $routeProvider
       .when('/index', {
@@ -21,16 +20,16 @@
         templateUrl : 'partials/directives.html',
         controller  : 'counterCtrl'
       })
-      .when('/transportObjects',{
-        templateUrl : 'partials/transportObjects.html',
-        controller  : 'transportCtrl'
-      })
       .when('/swap', {
         templateUrl : 'partials/swap.html',
         controller  : 'swapCtrl'
       })
+      .when('/unit', {
+        templateUrl : 'partials/unit.html'
+      })
       .otherwise({
         redirectTo : '/index'
       });
+
   });
 }).call(this);

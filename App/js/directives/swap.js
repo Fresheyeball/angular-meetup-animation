@@ -51,6 +51,7 @@
             });
 
             var destinationPosition = desinationElement.getBoundingClientRect(),
+                backgroundColor     = getComputedStyle(desinationElement).backgroundColor,
                 position            = {
                   top  : destinationPosition.top - parentPosition.top - marginTop,
                   left : destinationPosition.left - parentPosition.left - marginTop
@@ -59,6 +60,7 @@
             new TimelineLite().to(transport, 1, {
               y : position.top,
               x : position.left,
+              background : backgroundColor,
               onComplete : function(){
                 TweenLite.set(desinationElement, {
                   opacity : 1

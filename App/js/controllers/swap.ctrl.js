@@ -20,7 +20,7 @@
     $scope.moveToDestroyed = moveState('standingStates',  'destroyedStates');
     $scope.moveToStanding  = moveState('destroyedStates', 'standingStates');
 
-    $scope.moveToDestroyed(1);
+    for(var j = 0; j < STATES.length / 2; j++){ $scope.moveToDestroyed(1); }
 
   });
 

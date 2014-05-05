@@ -48,7 +48,7 @@
                 delay : scope.$index * 0.05
               }));
             }else{
-              TweenLite.set(element[0],    { y : scope.$index * CANDY_HEIGHT });
+              TweenLite.set(element[0], { y : scope.$index * CANDY_HEIGHT });
             }
             if(scope.$index === scope.states.length - 1){
               ctrl.animate();

@@ -191,13 +191,13 @@ div.candy i, li.candy i{
 
 @-webkit-keyframes grow{
   from{ height : 40px;  }
-  to  { height : 260px; }
+  to  { height : 340px; }
 }
 
 .homegif{
   float : right;
   height : 260px;
-  -webkit-animation:grow 120s;
+  -webkit-animation:grow 200s;
 }
 
 [ng-click]{

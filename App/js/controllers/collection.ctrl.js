@@ -3,9 +3,9 @@
       mores = [
         'Jack',
         'Jill',
-        'I cant think of any more names',
+        'I can\'t think of any more names',
         'Why does he keep clicking add?',
-        'Seriously, I cant think of any more names',
+        'Seriously, I can\'t think of any more names',
         'This joke is stupid and getting old fast',
         'Why does he keep going with this?',
         'Stop it!',
